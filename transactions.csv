@@ -1,0 +1,61 @@
+date,description,amount,category,payment_mode
+2025-06-01,Swiggy Food Order,450,Food Delivery,UPI
+2025-06-01,Metro Recharge,200,Transport,UPI
+2025-06-02,Zomato Food Order,380,Food Delivery,UPI
+2025-06-02,Grocery - DMart,1200,Groceries,UPI
+2025-06-03,Netflix Subscription,649,Subscriptions,Auto-Debit
+2025-06-03,Swiggy Instamart,530,Groceries,UPI
+2025-06-04,Cafe Coffee Day,310,Dining Out,UPI
+2025-06-04,Ola Cab,180,Transport,UPI
+2025-06-05,Swiggy Food Order,420,Food Delivery,UPI
+2025-06-05,Amazon Purchase,999,Shopping,UPI
+2025-06-06,Electricity Bill,1400,Utilities,UPI
+2025-06-06,Zomato Food Order,340,Food Delivery,UPI
+2025-06-07,Spotify Premium,119,Subscriptions,Auto-Debit
+2025-06-07,Rapido Bike,80,Transport,UPI
+2025-06-08,Swiggy Food Order,510,Food Delivery,UPI
+2025-06-08,Salon - Naturals,600,Personal Care,UPI
+2025-06-09,Grocery - Reliance,870,Groceries,UPI
+2025-06-09,Zomato Food Order,290,Food Delivery,UPI
+2025-06-10,BookMyShow Movie,400,Entertainment,UPI
+2025-06-10,Ola Cab,220,Transport,UPI
+2025-06-11,Swiggy Food Order,480,Food Delivery,UPI
+2025-06-11,Amazon Prime,299,Subscriptions,Auto-Debit
+2025-06-12,Gym Membership,1500,Health,UPI
+2025-06-12,Cafe Coffee Day,280,Dining Out,UPI
+2025-06-13,Swiggy Instamart,410,Groceries,UPI
+2025-06-13,Zomato Food Order,360,Food Delivery,UPI
+2025-06-14,Mobile Recharge,399,Utilities,UPI
+2025-06-14,Ola Cab,150,Transport,UPI
+2025-06-15,Swiggy Food Order,550,Food Delivery,UPI
+2025-06-15,Online Shopping - Myntra,1800,Shopping,UPI
+2025-06-16,Grocery - DMart,950,Groceries,UPI
+2025-06-16,YouTube Premium,189,Subscriptions,Auto-Debit
+2025-06-17,Zomato Food Order,320,Food Delivery,UPI
+2025-06-17,Rapido Bike,90,Transport,UPI
+2025-06-18,Swiggy Food Order,430,Food Delivery,UPI
+2025-06-18,BookMyShow Event,750,Entertainment,UPI
+2025-06-19,Cafe Coffee Day,260,Dining Out,UPI
+2025-06-19,Amazon Purchase,1299,Shopping,UPI
+2025-06-20,Swiggy Food Order,390,Food Delivery,UPI
+2025-06-20,Grocery - Reliance,780,Groceries,UPI
+2025-06-21,Zomato Food Order,410,Food Delivery,UPI
+2025-06-21,Ola Cab,200,Transport,UPI
+2025-06-22,Swiggy Instamart,470,Groceries,UPI
+2025-06-22,Salon - Naturals,400,Personal Care,UPI
+2025-06-23,Swiggy Food Order,520,Food Delivery,UPI
+2025-06-23,Internet Bill,999,Utilities,UPI
+2025-06-24,Zomato Food Order,350,Food Delivery,UPI
+2025-06-24,Rapido Bike,110,Transport,UPI
+2025-06-25,Cafe Coffee Day,290,Dining Out,UPI
+2025-06-25,Grocery - DMart,1100,Groceries,UPI
+2025-06-26,Swiggy Food Order,460,Food Delivery,UPI
+2025-06-26,Amazon Purchase,599,Shopping,UPI
+2025-06-27,Zomato Food Order,330,Food Delivery,UPI
+2025-06-27,Ola Cab,170,Transport,UPI
+2025-06-28,Swiggy Food Order,500,Food Delivery,UPI
+2025-06-28,Grocery - Reliance,830,Groceries,UPI
+2025-06-29,BookMyShow Movie,350,Entertainment,UPI
+2025-06-29,Zomato Food Order,380,Food Delivery,UPI
+2025-06-30,Swiggy Food Order,440,Food Delivery,UPI
+2025-06-30,Cafe Coffee Day,270,Dining Out,UPI

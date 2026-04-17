@@ -1,0 +1,13 @@
+date,description,amount,category,payment_mode
+2025-06-01,Swiggy Food Order,450,Food Delivery,UPI
+2025-06-01,Metro Recharge,200,Transport,UPI
+2025-06-02,Zomato Food Order,380,Food Delivery,UPI
+2025-06-02,Grocery - DMart,1200,Groceries,UPI
+2025-06-03,Netflix Subscription,649,Subscriptions,Auto-Debit
+2025-06-03,Swiggy Instamart,530,Groceries,UPI
+2025-06-04,Cafe Coffee Day,310,Dining Out,UPI
+2025-06-04,Ola Cab,180,Transport,UPI
+2025-06-05,Swiggy Food Order,420,Food Delivery,UPI
+2025-06-05,Amazon Purchase,999,Shopping,UPI
+2025-06-06,Electricity Bill,1400,Utilities,UPI
+2025-06-06,Zomato Food Order,340,Food Delivery,UPI

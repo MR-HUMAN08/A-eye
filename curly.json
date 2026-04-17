@@ -1,0 +1,15 @@
+{
+    "name": "Priya Sharma",
+    "age": 28,
+    "city": "Hyderabad",
+    "monthly_income": 60000,
+    "monthly_fixed_expenses": 18000,
+    "goal": "Buy a house in Hyderabad",
+    "goal_amount": 1500000,
+    "goal_timeline_years": 5,
+    "risk_appetite": "moderate",
+    "existing_savings": 80000,
+    "existing_investments": 25000,
+    "inflation_rate": 0.06,
+    "expected_returns": 0.12
+}

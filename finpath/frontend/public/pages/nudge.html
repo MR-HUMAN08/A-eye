@@ -1,0 +1,43 @@
+<div class="page-header"><h2>Nudge Simulator</h2></div>
+<div class="page-grid">
+  <section class="card span-8" style="margin: 0 auto; grid-column: 3 / span 8;">
+    <h3>Purchase Decision Simulator</h3>
+    <label>Purchase Amount (₹ INR)</label>
+    <div class="currency-input-wrap">
+      <span class="currency-prefix">₹</span>
+      <input class="input currency-input" id="nudge-amount" type="number" min="0" step="1" placeholder="e.g. 500" autocomplete="off" />
+    </div>
+    <label>What are you buying?</label>
+    <input class="input" id="nudge-description" type="text" autocomplete="off" />
+    <button class="btn btn-primary" id="nudge-submit" style="width:100%; margin-top: var(--space-3);">Analyse Impact -></button>
+    <p class="metric-label">The user is about to make a purchase. FinPath will calculate the exact impact on their goal.</p>
+  </section>
+
+  <section class="card span-12">
+    <h3>Impact History</h3>
+    <div id="nudge-history" style="max-height: 360px; overflow: auto;"></div>
+  </section>
+</div>
+
+<div id="nudge-overlay" class="modal-overlay hidden">
+  <div id="nudge-loading" class="modal-panel center">
+    <h2 class="pulse">Consulting Financial Agents...</h2>
+    <p>Please wait while FinPath computes the goal impact.</p>
+  </div>
+  <div id="nudge-modal" class="modal-panel hidden">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <h2 class="kpi-warning">Financial Impact Alert</h2>
+      <button class="btn" id="nudge-close">Close</button>
+    </div>
+    <h1 id="nudge-impact" class="center"></h1>
+    <p class="center" id="nudge-spend-context">Calculating your spending context...</p>
+    <p id="nudge-insight"></p>
+    <div style="display:flex; gap: var(--space-3); margin-top: var(--space-3);">
+      <button class="btn btn-success" style="flex:1;" id="nudge-reconsider">Reconsider ✅</button>
+      <button class="btn btn-danger" style="flex:1;" id="nudge-proceed">Proceed Anyway ❌</button>
+    </div>
+    <div id="nudge-audit"></div>
+  </div>
+</div>
+
+<div id="nudge-toast" class="badge amber hidden" style="position: fixed; right: var(--space-4); bottom: var(--space-4); z-index: var(--z-modal);"></div>

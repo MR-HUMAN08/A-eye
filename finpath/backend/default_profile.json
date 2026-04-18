@@ -1,0 +1,15 @@
+{
+  "name": "Demo User",
+  "age": 30,
+  "city": "India",
+  "monthly_income": 0,
+  "monthly_fixed_expenses": 0,
+  "goal": "Define a financial goal",
+  "goal_amount": 0,
+  "goal_timeline_years": 5,
+  "risk_appetite": "moderate",
+  "existing_savings": 0,
+  "existing_investments": 0,
+  "inflation_rate": 0.06,
+  "expected_returns": 0.12
+}

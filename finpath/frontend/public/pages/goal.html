@@ -1,0 +1,29 @@
+<div class="page-header"><h2>Goal Tracker</h2></div>
+<div class="page-grid">
+  <section class="card span-12">
+    <h3>Buy a House in Hyderabad</h3>
+    <p>Goal Amount: Rs 15,00,000 | Timeline: 5 years</p>
+    <p>Inflation-adjusted target: <strong id="inflation-target">Rs 20,07,304</strong></p>
+    <div class="progress"><span id="goal-progress-main" style="width:0%"></span></div>
+    <p class="metric-label" id="goal-progress-main-label">0% complete</p>
+  </section>
+  <section class="card span-4"><h3>Daily savings needed</h3><p class="metric-value" id="daily-needed"></p></section>
+  <section class="card span-4"><h3>Monthly savings needed</h3><p class="metric-value kpi-positive" id="monthly-needed"></p></section>
+  <section class="card span-4"><h3>Goal feasibility</h3><p class="metric-value" id="goal-feasibility"></p></section>
+
+  <section class="chart-wrap span-8"><h3 class="chart-title">Projection Chart</h3><div class="chart-canvas"><canvas id="goal-projection-chart"></canvas></div></section>
+  <section class="card span-4">
+    <h3>What-If Simulator</h3>
+    <label>Monthly Savings Amount: <span id="whatif-savings-value"></span></label>
+    <input class="input" id="whatif-savings" type="range" min="0" max="30000" />
+    <label>Expected Return Rate: <span id="whatif-return-value"></span></label>
+    <input class="input" id="whatif-return" type="range" min="6" max="18" />
+    <p id="whatif-output" class="metric-label"></p>
+  </section>
+
+  <section class="card span-12">
+    <h3>AI Goal Analysis</h3>
+    <p id="goal-ai-text"></p>
+    <div id="goal-audit"></div>
+  </section>
+</div>

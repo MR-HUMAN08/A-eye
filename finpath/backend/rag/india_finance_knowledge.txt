@@ -1,0 +1,13 @@
+Indian personal finance baseline (demo):
+Food delivery for a 60k/month income user should typically remain near 2500-3500 INR monthly.
+Excess recurring discretionary spend reduces goal runway and delays long-term house goals.
+
+Indian investing references (demo):
+Nifty 50 index funds have long-run historical CAGR around 12% with market volatility.
+PPF has sovereign-backed returns around 7.1% and 15-year lock-in with 80C tax benefit.
+SGB has 2.5% coupon plus gold price exposure and multi-year tenure.
+ELSS is equity-linked, 3-year lock-in, and 80C eligible up to 1.5L.
+NPS Tier 1 has long tenure to retirement and tax benefits under 80CCD.
+
+Goal guidance baseline:
+For a 15 lakh target in 5 years at 6% inflation, effective target rises materially and requires disciplined monthly saving.

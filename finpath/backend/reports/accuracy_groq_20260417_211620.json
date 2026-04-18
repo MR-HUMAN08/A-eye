@@ -1,0 +1,104 @@
+{
+  "provider": "groq",
+  "evaluated_at": "2026-04-17T21:16:20.866040+00:00",
+  "dataset_path": "/home/harini/cbit/archive/finance_test_1000.csv",
+  "batch_size": 50,
+  "max_tokens": 700,
+  "elapsed_seconds": 138.91,
+  "metrics": {
+    "accuracy_percent": 100.0,
+    "total_samples": 1000,
+    "correct": 1000,
+    "incorrect": 0,
+    "invalid_predictions": 0,
+    "label_distribution": {
+      "emi": 215,
+      "travel": 196,
+      "shopping": 203,
+      "investment": 181,
+      "food": 205
+    },
+    "prediction_distribution": {
+      "emi": 215,
+      "travel": 196,
+      "shopping": 203,
+      "investment": 181,
+      "food": 205
+    },
+    "per_class": {
+      "emi": {
+        "precision": 100.0,
+        "recall": 100.0,
+        "f1": 100.0,
+        "support": 215
+      },
+      "food": {
+        "precision": 100.0,
+        "recall": 100.0,
+        "f1": 100.0,
+        "support": 205
+      },
+      "shopping": {
+        "precision": 100.0,
+        "recall": 100.0,
+        "f1": 100.0,
+        "support": 203
+      },
+      "travel": {
+        "precision": 100.0,
+        "recall": 100.0,
+        "f1": 100.0,
+        "support": 196
+      },
+      "investment": {
+        "precision": 100.0,
+        "recall": 100.0,
+        "f1": 100.0,
+        "support": 181
+      }
+    },
+    "macro_f1_percent": 100.0,
+    "confusion_matrix": {
+      "emi": {
+        "emi": 215,
+        "food": 0,
+        "shopping": 0,
+        "travel": 0,
+        "investment": 0,
+        "invalid": 0
+      },
+      "food": {
+        "emi": 0,
+        "food": 205,
+        "shopping": 0,
+        "travel": 0,
+        "investment": 0,
+        "invalid": 0
+      },
+      "shopping": {
+        "emi": 0,
+        "food": 0,
+        "shopping": 203,
+        "travel": 0,
+        "investment": 0,
+        "invalid": 0
+      },
+      "travel": {
+        "emi": 0,
+        "food": 0,
+        "shopping": 0,
+        "travel": 196,
+        "investment": 0,
+        "invalid": 0
+      },
+      "investment": {
+        "emi": 0,
+        "food": 0,
+        "shopping": 0,
+        "travel": 0,
+        "investment": 181,
+        "invalid": 0
+      }
+    }
+  }
+}

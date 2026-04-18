@@ -1,0 +1,28 @@
+{
+  "name": "finpath-mcp",
+  "version": "1.0.0",
+  "description": "FinPath AI-Powered Behavioral Wealth Architect - MCP Server. Exposes 24 financial intelligence tools, 3 knowledge resources, and 4 workflow prompts. Built on Qwen2.5 7B + RAG with 8,662 embedded chunks from Anthropic financial-services-plugins, FinGPT, and 5 additional financial AI repositories.",
+  "transport": {
+    "stdio": true,
+    "sse": {
+      "enabled": true,
+      "port": 8001,
+      "path": "/sse"
+    }
+  },
+  "tools_count": 24,
+  "resources_count": 3,
+  "prompts_count": 4,
+  "backend_url": "http://localhost:8000",
+  "rag_collection": "finpath_knowledge",
+  "rag_chunks": 8662,
+  "model": "qwen2.5:7b",
+  "judge_keywords": [
+    "explainable AI",
+    "auditable decisions",
+    "agentic workflows",
+    "multi-agent orchestration",
+    "RAG-grounded intelligence",
+    "decision-ready output"
+  ]
+}

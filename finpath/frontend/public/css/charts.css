@@ -1,0 +1,40 @@
+.chart-wrap {
+  background: var(--glass-bg);
+  border: var(--border-width) solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  min-height: var(--chart-height);
+}
+
+.chart-title {
+  font-size: var(--text-lg);
+  margin: 0 0 var(--space-3);
+}
+
+.chart-canvas {
+  width: 100%;
+  min-height: calc(var(--chart-height) - var(--space-10));
+}
+
+.timeline {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.timeline-step {
+  position: relative;
+  padding-left: var(--space-6);
+  border-left: var(--border-width) dashed var(--border-card);
+}
+
+.timeline-step::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--space-2) * -1);
+  top: var(--space-1);
+  width: var(--space-3);
+  height: var(--space-3);
+  border-radius: var(--radius-full);
+  background: var(--accent-blue);
+  box-shadow: var(--shadow-glow-blue);
+}

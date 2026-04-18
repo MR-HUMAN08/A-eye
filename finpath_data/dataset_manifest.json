@@ -1,0 +1,164 @@
+{
+  "datasets": [
+    {
+      "name": "finance_train_5000",
+      "source_type": "local_csv",
+      "path": "/home/harini/cbit/archive/finance_train_5000.csv",
+      "task_type": "transaction_classification",
+      "priority": "local"
+    },
+    {
+      "name": "finance_test_1000",
+      "source_type": "local_csv",
+      "path": "/home/harini/cbit/archive/finance_test_1000.csv",
+      "task_type": "transaction_classification",
+      "priority": "local"
+    },
+    {
+      "name": "customer_financial_profiles",
+      "source_type": "local_csv",
+      "path": "/home/harini/cbit/archive (2)/Customer_financial_profiles.csv",
+      "task_type": "tabular_financial_rag",
+      "priority": "local"
+    },
+    {
+      "name": "aggregate_expenditure",
+      "source_type": "local_csv",
+      "path": "/home/harini/cbit/archive (1)/Aggregate_Expenditure.csv",
+      "task_type": "macro_time_series",
+      "priority": "local"
+    },
+    {
+      "name": "capital_expenditure",
+      "source_type": "local_csv",
+      "path": "/home/harini/cbit/archive (1)/Capital_Expenditure.csv",
+      "task_type": "macro_time_series",
+      "priority": "local"
+    },
+    {
+      "name": "gross_fiscal_deficits",
+      "source_type": "local_csv",
+      "path": "/home/harini/cbit/archive (1)/Gross_Fiscal_Deficits.csv",
+      "task_type": "macro_time_series",
+      "priority": "local"
+    },
+    {
+      "name": "nominal_gsdp_series",
+      "source_type": "local_csv",
+      "path": "/home/harini/cbit/archive (1)/Nominal_GSDP_Series.csv",
+      "task_type": "macro_time_series",
+      "priority": "local"
+    },
+    {
+      "name": "own_tax_revenues",
+      "source_type": "local_csv",
+      "path": "/home/harini/cbit/archive (1)/Own_Tax_Revenues.csv",
+      "task_type": "macro_time_series",
+      "priority": "local"
+    },
+    {
+      "name": "revenue_deficits",
+      "source_type": "local_csv",
+      "path": "/home/harini/cbit/archive (1)/Revenue_Deficits.csv",
+      "task_type": "macro_time_series",
+      "priority": "local"
+    },
+    {
+      "name": "revenue_expenditure",
+      "source_type": "local_csv",
+      "path": "/home/harini/cbit/archive (1)/Revenue_Expenditure.csv",
+      "task_type": "macro_time_series",
+      "priority": "local"
+    },
+    {
+      "name": "social_sector_expenditure",
+      "source_type": "local_csv",
+      "path": "/home/harini/cbit/archive (1)/Social_Sector_Expenditure.csv",
+      "task_type": "macro_time_series",
+      "priority": "local"
+    },
+    {
+      "name": "finance_instruct_500k",
+      "source_type": "huggingface",
+      "dataset_id": "oieieio/Finance-Instruct-500k",
+      "split": "train",
+      "task_type": "instruction_tuning",
+      "priority": "external"
+    },
+    {
+      "name": "finance_alpaca",
+      "source_type": "huggingface",
+      "dataset_id": "gbharti/finance-alpaca",
+      "split": "train",
+      "task_type": "instruction_tuning",
+      "priority": "external"
+    },
+    {
+      "name": "financial_qa_10k",
+      "source_type": "huggingface",
+      "dataset_id": "virattt/financial-qa-10K",
+      "split": "train",
+      "task_type": "question_answering",
+      "priority": "external"
+    },
+    {
+      "name": "rllm_finqa",
+      "source_type": "huggingface",
+      "dataset_id": "rLLM/rLLM-FinQA-Dataset",
+      "split": "train",
+      "task_type": "question_answering",
+      "priority": "external"
+    },
+    {
+      "name": "investopedia_instruction_tuning",
+      "source_type": "huggingface",
+      "dataset_id": "FinLang/investopedia-instruction-tuning-dataset",
+      "split": "train",
+      "task_type": "instruction_tuning",
+      "priority": "external"
+    },
+    {
+      "name": "home_credit_default_risk",
+      "source_type": "kaggle",
+      "competition": "home-credit-default-risk",
+      "task_type": "credit_risk",
+      "priority": "external",
+      "manual_download_required": true
+    },
+    {
+      "name": "sp500_history",
+      "source_type": "csv_url",
+      "url": "https://raw.githubusercontent.com/datasets/s-and-p-500/master/data/data.csv",
+      "task_type": "market_time_series",
+      "priority": "external"
+    },
+    {
+      "name": "bankruptcy_prediction",
+      "source_type": "csv_url",
+      "url": "https://raw.githubusercontent.com/tklouie/Kaggle_Bankruptcy_Prediction/main/data.csv",
+      "task_type": "credit_risk",
+      "priority": "external"
+    },
+    {
+      "name": "credit_default",
+      "source_type": "csv_url",
+      "url": "https://raw.githubusercontent.com/GokuMohandas/Made-With-ML/main/datasets/credit.csv",
+      "task_type": "credit_risk",
+      "priority": "external"
+    },
+    {
+      "name": "bank_additional_full",
+      "source_type": "csv_url",
+      "url": "https://raw.githubusercontent.com/plotly/datasets/master/bank-additional-full.csv",
+      "task_type": "classification",
+      "priority": "external"
+    },
+    {
+      "name": "consumer_finance_complaints",
+      "source_type": "zip_csv_url",
+      "url": "https://files.consumerfinance.gov/ccdb/complaints.csv.zip",
+      "task_type": "financial_complaints",
+      "priority": "external"
+    }
+  ]
+}

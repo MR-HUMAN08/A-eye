@@ -1,4 +1,4 @@
-# FinPath — Hackathon Master Brief & Execution Plan
+## FinPath — Hackathon Master Brief & Execution Plan
 ### AI-Powered Behavioral Wealth Architect | PS 7
 
 ---

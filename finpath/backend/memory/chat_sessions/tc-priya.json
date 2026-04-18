@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "message": "Can I afford a vacation to Goa in December if I save ₹2,000 less this month?"
+  },
+  {
+    "role": "assistant",
+    "message": "- Maintaining the current savings of ₹37,301 this month would allow you to save an additional ₹2,000 towards your house goal over 5 years.\n- Saving ₹2,000 less this month will result in a shortfall of approximately ₹10,000 for your house goal over the same period.\n- Affording a vacation to Goa in December with the savings reduction is feasible, as it would only impact about 3% of your total monthly surplus.\n- To buy a house in Hyderabad within 5 years, you need to save approximately ₹27,600 per month, which includes the current surplus plus additional savings."
+  }
+]

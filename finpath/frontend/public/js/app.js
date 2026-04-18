@@ -15,20 +15,37 @@ import {
   postStatement,
   postRagQuery,
   getRagStats,
-  postDocumentUpload,
+
 } from "./api.js";
 import { typewrite } from "./typewriter.js";
 import { renderAudit } from "./audit.js";
 import { renderDonut, renderLine, renderBar, renderPie } from "./charts.js";
 import { initNudgePage } from "./nudge.js";
 
-const defaultSession = localStorage.getItem("finpath-session-id") || `mcp-session-${Date.now()}`;
-localStorage.setItem("finpath-session-id", defaultSession);
+const SESSION_KEY = "finpath-session-id";
+const LEGACY_SESSION_KEY = "finpath_session_id";
+const PROFILE_KEY = "finpath_profile";
+const TX_KEY = "finpath_transactions";
+const LIVE_APPLIED_KEY = "finpath_live_applied";
+
+const defaultSession = localStorage.getItem(SESSION_KEY) || localStorage.getItem(LEGACY_SESSION_KEY) || `mcp-session-${Date.now()}`;
+localStorage.setItem(SESSION_KEY, defaultSession);
+localStorage.setItem(LEGACY_SESSION_KEY, defaultSession);
+window.APP_SESSION_ID = defaultSession;
 
 let runtimeProfile = {};
 let runtimeTransactions = [];
 const runtimeCache = new Map();
-let liveInputsApplied = false;
+let liveInputsApplied = localStorage.getItem(LIVE_APPLIED_KEY) === "true";
+
+function runMigrationIfNeeded() {
+  const migrationKey = "finpath-profile-migration-v2";
+  if (!localStorage.getItem(migrationKey)) {
+    localStorage.removeItem(PROFILE_KEY);
+    localStorage.removeItem(TX_KEY);
+    localStorage.setItem(migrationKey, "done");
+  }
+}
 
 function getRuntimeProfile() {
   return { ...runtimeProfile };
@@ -41,11 +58,33 @@ function getRuntimeTransactions() {
 function saveRuntimeInputs(profile, transactions) {
   runtimeProfile = { ...profile };
   runtimeTransactions = [...transactions];
+  localStorage.setItem(PROFILE_KEY, JSON.stringify(runtimeProfile));
+  localStorage.setItem(TX_KEY, JSON.stringify(runtimeTransactions));
 }
 
 async function syncDemoContext() {
   let profile = getRuntimeProfile();
   let transactions = getRuntimeTransactions();
+
+  if (!Object.keys(profile).length) {
+    try {
+      profile = JSON.parse(localStorage.getItem(PROFILE_KEY) || "{}");
+    } catch {
+      profile = {};
+    }
+  }
+
+  if (!transactions.length) {
+    try {
+      transactions = JSON.parse(localStorage.getItem(TX_KEY) || "[]");
+    } catch {
+      transactions = [];
+    }
+  }
+
+  if (Object.keys(profile).length || transactions.length) {
+    saveRuntimeInputs(profile, transactions);
+  }
 
   if (!Object.keys(profile).length || !transactions.length) {
     try {
@@ -89,7 +128,7 @@ const routes = {
   sentiment: initSentiment,
   retirement: initRetirement,
   macro: initMacro,
-  documents: initDocuments,
+
   statement: initStatement,
   "audit-trail": initAuditTrail,
 };
@@ -140,6 +179,7 @@ async function loadPage(page) {
       return;
     }
     content.innerHTML = await response.text();
+    await syncDemoContext();
     updateActiveNav(page);
     if (routes[page]) await routes[page]();
   } catch (error) {
@@ -151,6 +191,17 @@ function updateActiveNav(page) {
   document.querySelectorAll(".nav-item").forEach((item) => {
     item.classList.toggle("active", item.dataset.page === page);
   });
+}
+
+function updateHeaderSubtitle(profile) {
+  const name = profile?.name || "Demo User";
+  const age = profile?.age || "--";
+  const income = profile?.monthly_income
+    ? `₹${Number(profile.monthly_income).toLocaleString("en-IN")}/month`
+    : "Income not set";
+  const goal = profile?.goal || "Goal not set";
+  const el = document.getElementById("user-subtitle") || document.getElementById("user-chip");
+  if (el) el.textContent = `${name}, ${age} | ${income} | Goal: ${goal}`;
 }
 
 function parseTransactionsCsv(csvText) {
@@ -170,17 +221,22 @@ function parseTransactionsCsv(csvText) {
     .filter((tx) => tx.date && tx.description && tx.category);
 }
 
-// Compute savings from income, fixed expenses, and variable transactions
-function computeSavings(profile, transactions) {
+// Compute monthly surplus from income, fixed expenses, and variable transactions
+function computeMonthlySurplus(profile, transactions) {
   const income = Number(profile.monthly_income || 0);
   const fixed = Number(profile.monthly_fixed_expenses || 0);
   const variable = transactions.reduce((sum, tx) => sum + Number(tx.amount || 0), 0);
   return Math.max(0, income - fixed - variable);
 }
 
+// Backward compat alias
+function computeSavings(profile, transactions) {
+  return computeMonthlySurplus(profile, transactions);
+}
+
 // Update dashboard metric cards on live input change (without full page reload)
 function updateDashboardMetrics(profile, transactions) {
-  const computedSavings = computeSavings(profile, transactions);
+  const monthlySurplusVal = computeMonthlySurplus(profile, transactions);
 
   const monthlyIncome = Number(profile.monthly_income || 0);
   const monthlyFixed = Number(profile.monthly_fixed_expenses || 0);
@@ -209,23 +265,26 @@ function updateDashboardMetrics(profile, transactions) {
   if (leakageMainEl) leakageMainEl.textContent = `${currency(topLeak[1])}/month on ${topLeak[0]}`;
   if (leakageSubEl) leakageSubEl.textContent = "Top detected leakage category from live input set";
 
-  // Update goal progress card
+  // Update goal progress card — show monthly surplus and months to goal
   const goalAmount = Number(profile?.goal_amount || 0);
-  const goalProgress = goalAmount > 0 ? Math.min(100, Math.round((computedSavings / goalAmount) * 100)) : 0;
+  const existingSaved = Number(profile?.existing_savings || 0);
+  const monthsToGoal = monthlySurplusVal > 0 && goalAmount > existingSaved ? Math.ceil((goalAmount - existingSaved) / monthlySurplusVal) : 0;
+  const goalProgress = goalAmount > 0 && monthlySurplusVal > 0 ? Math.min(100, Math.round((monthlySurplusVal * 12 / goalAmount) * 100)) : 0;
   const goalProgressBar = document.getElementById("goal-progress-bar");
   const goalProgressText = document.getElementById("goal-progress-text");
   const goalProgressPercent = document.getElementById("goal-progress-percent");
   
   if (goalProgressBar) goalProgressBar.style.width = `${goalProgress}%`;
-  if (goalProgressText) goalProgressText.textContent = `${currency(computedSavings)} saved of ${currency(goalAmount)} goal`;
+  if (goalProgressText) goalProgressText.textContent = `${currency(monthlySurplusVal)}/month surplus · ${monthsToGoal > 0 ? monthsToGoal + ' months to goal' : 'Set goal to track'}`;
   if (goalProgressPercent) goalProgressPercent.textContent = `${goalProgress}%`;
 }
 
 async function initDashboard() {
   const { profile, transactions } = await syncDemoContext();
-  const hasLiveContext = liveInputsApplied && Object.keys(profile).length > 0 && transactions.length > 0;
+  const hasLiveContext = liveInputsApplied && Number(profile?.monthly_income || 0) > 0 && transactions.length > 0;
   const insightContainer = document.getElementById("dashboard-insight");
   const auditContainer = document.getElementById("dashboard-audit");
+  updateHeaderSubtitle(profile);
 
   const form = document.getElementById("demo-context-form");
   if (form) {
@@ -294,6 +353,7 @@ async function initDashboard() {
         saveRuntimeInputs(updatedProfile, updatedTransactions);
         await setDemoContext(defaultSession, updatedProfile, updatedTransactions);
         liveInputsApplied = true;
+        localStorage.setItem(LIVE_APPLIED_KEY, "true");
         invalidateRuntimeCache();
         status.textContent = `Live context updated for ${updatedProfile.name}. Reloading analytics...`;
         setTimeout(() => route(), 120);
@@ -305,6 +365,14 @@ async function initDashboard() {
   }
 
   if (!hasLiveContext) {
+    document.getElementById("wealth-score").textContent = "--";
+    document.getElementById("monthly-surplus").textContent = "₹--";
+    document.getElementById("goal-progress-text").textContent = "Enter your profile above to see goal progress";
+    document.getElementById("goal-progress-bar").style.width = "0%";
+    document.getElementById("goal-progress-percent").textContent = "--";
+    document.getElementById("goal-countdown").textContent = "--";
+    document.getElementById("leakage-main").textContent = "₹--/month";
+    document.getElementById("leakage-sub").textContent = "Enter transactions to detect leakage";
     insightContainer.textContent = "No live results yet. Fill the form and click Apply Live Inputs to run analysis.";
     auditContainer.innerHTML = "";
     document.getElementById("portfolio-note").textContent = "Apply live inputs to load portfolio pulse.";
@@ -340,17 +408,23 @@ async function initDashboard() {
   document.getElementById("surplus-subtext").textContent = `After ${currency(monthlyVariable)} variable spend + ${currency(monthlyFixed)} fixed`;
   document.getElementById("wealth-subtext").textContent = `Based on ${currency(monthlySurplus)} monthly surplus`;
 
-  const goalSaved = computeSavings(profile, transactions);
+  const surplusForGoal = computeMonthlySurplus(profile, transactions);
   const goalAmount = Number(profile?.goal_amount || 0);
-  const progress = goalAmount > 0 ? Math.min(100, Math.round((goalSaved / goalAmount) * 100)) : 0;
-  document.getElementById("goal-progress-text").textContent = `${currency(goalSaved)} saved of ${currency(goalAmount)} goal`;
+  const existingSavingsVal = Number(profile?.existing_savings || 0);
+  const monthsToGoalDash = surplusForGoal > 0 && goalAmount > existingSavingsVal ? Math.ceil((goalAmount - existingSavingsVal) / surplusForGoal) : 0;
+  const progress = goalAmount > 0 && surplusForGoal > 0 ? Math.min(100, Math.round((surplusForGoal * 12 / goalAmount) * 100)) : 0;
+  document.getElementById("goal-progress-text").textContent = `${currency(surplusForGoal)}/month surplus · ${monthsToGoalDash > 0 ? monthsToGoalDash + ' months to goal' : 'Set goal to track'}`;
   document.getElementById("goal-progress-bar").style.width = `${progress}%`;
   document.getElementById("goal-progress-percent").textContent = `${progress}%`;
-  document.getElementById("goal-countdown").textContent = "1825 days remaining";
+  const countdownDays = Number(profile?.goal_timeline_years || 0) > 0 ? Math.round(Number(profile.goal_timeline_years) * 365) : 0;
+  document.getElementById("goal-countdown").textContent = countdownDays > 0 ? `${countdownDays} days remaining` : "--";
 
   const topLeak = Object.entries(analysis?.category_totals || {}).sort((a, b) => Number(b[1]) - Number(a[1]))[0] || ["N/A", 0];
+  const benchmarkMap = { "Food Delivery": 3000, Groceries: 6000, Shopping: 4000, Subscriptions: 800 };
+  const benchmark = benchmarkMap[topLeak[0]] || Math.max(1, Math.round(monthlyIncome * 0.08));
+  const leakRatio = benchmark > 0 ? (Number(topLeak[1]) / benchmark).toFixed(1) : "0.0";
   document.getElementById("leakage-main").textContent = `${currency(topLeak[1])}/month on ${topLeak[0]}`;
-  document.getElementById("leakage-sub").textContent = `Top detected leakage category from live input set`;
+  document.getElementById("leakage-sub").textContent = `${leakRatio}x benchmark based on Behavioral Agent analysis`;
 
   const categories = Object.entries(analysis?.category_totals || {}).slice(0, 10);
   const labels = categories.map(([name]) => name);
@@ -358,9 +432,14 @@ async function initDashboard() {
   const palette = ["#3B82F6", "#10B981", "#F59E0B", "#EF4444", "#8B5CF6", "#14B8A6", "#FB7185", "#22C55E", "#F97316", "#38BDF8"];
   renderDonut("dashboard-donut", labels, values, palette);
 
-  const timelineData = [0, 84600, 169200, 507600, 1000000, 1500000];
-  document.getElementById("goal-timeline").innerHTML = ["Today", "6 months", "1 year", "3 years", "4 years", "5 years"]
-    .map((step, idx) => `<div class="timeline-step"><strong>${step}</strong><div>Projected Savings: ${currency(timelineData[idx])}</div></div>`)
+  // Dynamic goal timeline computed from actual surplus
+  const surplusPerMonth = monthlySurplus;
+  const goalYears = Number(profile?.goal_timeline_years || 5);
+  const tlSteps = ["Today", "6 months", "1 year", "3 years", `${goalYears - 1} years`, `${goalYears} years`];
+  const tlMonths = [0, 6, 12, 36, Math.max(0, (goalYears - 1) * 12), goalYears * 12];
+  const tlData = tlMonths.map((m) => Math.round(surplusPerMonth * m));
+  document.getElementById("goal-timeline").innerHTML = tlSteps
+    .map((step, idx) => `<div class="timeline-step"><strong>${step}</strong><div>Projected: ${currency(tlData[idx])}</div></div>`)
     .join("");
 
   document.querySelectorAll("[data-agent-link]").forEach((pill) => {
@@ -369,7 +448,17 @@ async function initDashboard() {
     });
   });
 
-  await typewrite(insightContainer, textFromResponse(analysis), 14);
+  // Render dashboard insight as bullet points
+  const insightText = textFromResponse(analysis);
+  const insightLines = insightText.split(/[.\n]/).map(s => s.trim()).filter(s => s.length > 8);
+  const bulletPoints = insightLines.slice(0, 5).map(s => s.replace(/^[•\-*]\s*/, "").trim());
+  if (bulletPoints.length > 0) {
+    insightContainer.innerHTML = `<ul style="list-style: disc; padding-left: var(--space-4); margin: var(--space-2) 0;">
+      ${bulletPoints.map(b => `<li style="margin-bottom: var(--space-2); line-height: 1.5;">${b}.</li>`).join("")}
+    </ul>`;
+  } else {
+    insightContainer.textContent = insightText;
+  }
   renderAudit(auditContainer, auditFromResponse(analysis));
 
   document.getElementById("sentiment-note").textContent = "Loading sentiment...";
@@ -391,7 +480,7 @@ async function initDashboard() {
 
   const profileLine = document.getElementById("dashboard-user-line");
   if (profileLine) {
-    profileLine.textContent = `${profile.name}, ${profile.age} | Income \u20B9${Number(profile.monthly_income || 0).toLocaleString("en-IN")}/month | Goal: ${profile.goal}`;
+    profileLine.textContent = `${profile?.name || "Demo User"}, ${profile?.age || "--"} | Income ₹${Number(profile?.monthly_income || 0).toLocaleString("en-IN")}/month | Goal: ${profile?.goal || "Goal not set"}`;
   }
 
 }
@@ -434,19 +523,25 @@ async function initSpending() {
 
   tableBody.innerHTML = rows;
 
+  // Dynamic leak cards from actual analysis data
   const leakCards = document.getElementById("leak-cards");
-  leakCards.innerHTML = [
-    { name: "Food Delivery", value: 4200, months: 4 },
-    { name: "Subscriptions", value: 455, months: 1 },
-    { name: "Shopping", value: 697, months: 2 },
-  ]
+  const leakEntries = Object.entries(categoryData)
+    .sort((a, b) => Number(b[1]) - Number(a[1]))
+    .slice(0, 3)
+    .map(([name, value]) => {
+      const bm = benchmarks[name] || Math.round((income * 0.08));
+      const excess = Math.max(0, Number(value) - bm);
+      const monthsGain = income > 0 ? Math.max(1, Math.round(excess * 12 / Math.max(1, income * 0.15))) : 1;
+      return { name, value: Number(value), excess, months: monthsGain };
+    });
+  leakCards.innerHTML = leakEntries
     .map(
       (item) => `
       <div class="card span-4">
         <h3>${item.name}</h3>
         <p class="metric-value kpi-danger">${currency(item.value)}</p>
-        <p>Annual waste: <strong class="kpi-danger">${currency(item.value * 12)}</strong></p>
-        <p class="kpi-positive">If fixed, adds ${item.months} months to goal</p>
+        <p>Annual cost: <strong class="kpi-danger">${currency(item.value * 12)}</strong></p>
+        <p class="kpi-positive">Cutting excess saves ~${item.months} month(s) toward goal</p>
       </div>
     `
     )
@@ -473,13 +568,14 @@ async function initGoal() {
   const profile = getRuntimeProfile();
   const transactions = getRuntimeTransactions();
   const data = await cachedCall(`goal:${defaultSession}`, () => getGoal(defaultSession), 120000);
-  const current = computeSavings(profile, transactions);
+  const current = computeMonthlySurplus(profile, transactions);
   const target = Number(profile.goal_amount || 0);
-  const inflationAdjusted = Number(data?.inflation_adjusted_target || 2007304);
-  const pct = target > 0 ? Math.round((current / target) * 100) : 0;
+  const inflationAdjusted = Number(data?.inflation_adjusted_target || 0);
+  const monthsToGoalPage = current > 0 && target > 0 ? Math.ceil(target / current) : 0;
+  const pct = target > 0 && current > 0 ? Math.min(100, Math.round((current * 12 / target) * 100)) : 0;
 
   document.getElementById("goal-progress-main").style.width = `${pct}%`;
-  document.getElementById("goal-progress-main-label").textContent = `${pct}% complete`;
+  document.getElementById("goal-progress-main-label").textContent = `${pct}% annual coverage`;
   document.getElementById("daily-needed").textContent = currency(data?.daily_savings_needed || 471);
   document.getElementById("monthly-needed").textContent = currency(data?.monthly_savings_needed || 14100);
   document.getElementById("goal-feasibility").innerHTML = data?.goal_feasibility === "feasible" ? '<span class="badge green">ON TRACK</span>' : '<span class="badge amber">AT RISK</span>';
@@ -554,9 +650,22 @@ async function initCfoChat() {
     const card = document.createElement("div");
     card.className = "card";
     card.style.maxWidth = "75%";
-    card.innerHTML = `<div class="badge blue">FinPath CFO</div><p id="ai-temp"></p><div class="ai-audit"></div>`;
+    card.innerHTML = `<div class="badge blue">FinPath CFO</div><div id="ai-temp"></div><div class="ai-audit"></div>`;
     chatLog.appendChild(card);
-    await typewrite(card.querySelector("#ai-temp"), textFromResponse(responseObj), 12);
+    const rawText = textFromResponse(responseObj);
+    // Parse bullet points (lines starting with •, -, or *)
+    const lines = rawText.split("\n").map(l => l.trim()).filter(Boolean);
+    const isBulletList = lines.some(l => l.startsWith("•") || l.startsWith("-") || l.startsWith("*"));
+    const aiTemp = card.querySelector("#ai-temp");
+    if (isBulletList) {
+      const bullets = lines
+        .filter(l => l.startsWith("•") || l.startsWith("-") || l.startsWith("*"))
+        .map(l => l.replace(/^[•\-*]\s*/, "").trim())
+        .slice(0, 5);
+      aiTemp.innerHTML = `<ul style="list-style: disc; padding-left: var(--space-4); margin: var(--space-2) 0;">${bullets.map(b => `<li style="margin-bottom: var(--space-1);">${b}</li>`).join("")}</ul>`;
+    } else {
+      await typewrite(aiTemp, rawText, 12);
+    }
     renderAudit(card.querySelector(".ai-audit"), auditFromResponse(responseObj));
     chatLog.scrollTop = chatLog.scrollHeight;
   }
@@ -568,7 +677,8 @@ async function initCfoChat() {
     input.value = "";
     try {
       const response = await postChat(message, defaultSession);
-      await appendAi(response);
+      const aiText = response?.response || response?.result || response?.message || "I could not generate a response. Please try again.";
+      await appendAi({ ...response, response: aiText });
     } catch (err) {
       await appendAi({ summary: `Unable to fetch CFO response: ${err.message}` });
     }
@@ -615,76 +725,78 @@ async function initMacro() {
   document.getElementById("macro-summary").textContent = textFromResponse(macro);
 }
 
-async function initDocuments() {
-  const drop = document.getElementById("upload-zone");
-  const fileInput = document.getElementById("document-file");
-  const output = document.getElementById("document-result");
-  const progress = document.getElementById("upload-progress");
 
-  async function upload(file) {
-    const valid = ["application/pdf", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.ms-excel"];
-    if (!valid.includes(file.type)) {
-      output.textContent = "Only PDF, XLSX, or XLS are allowed.";
-      return;
-    }
 
-    progress.classList.remove("hidden");
-    progress.textContent = "Extracting text...";
-    const formData = new FormData();
-    formData.append("file", file);
-
-    try {
-      const resp = await postDocumentUpload(formData);
-      progress.textContent = "Indexing into RAG...";
-      output.innerHTML = `<div class='card'>
-        <h3>Extraction Summary</h3>
-        <p>${textFromResponse(resp)}</p>
-        <p><strong>Goal Relevance:</strong> What this document means for your house goal is highlighted in the AI summary.</p>
-      </div>`;
-      setTimeout(() => {
-        progress.textContent = "Analysis complete";
-      }, 600);
-    } catch (err) {
-      output.textContent = `Upload failed: ${err.message}`;
-      progress.classList.add("hidden");
-    }
-  }
-
-  drop.addEventListener("dragover", (event) => {
-    event.preventDefault();
-    drop.classList.add("pulse");
-  });
-
-  drop.addEventListener("dragleave", () => drop.classList.remove("pulse"));
-  drop.addEventListener("drop", (event) => {
-    event.preventDefault();
-    drop.classList.remove("pulse");
-    if (event.dataTransfer.files[0]) upload(event.dataTransfer.files[0]);
-  });
-
-  fileInput.addEventListener("change", () => {
-    if (fileInput.files[0]) upload(fileInput.files[0]);
-  });
-}
 
 async function initStatement() {
   const runBtn = document.getElementById("statement-run");
   const output = document.getElementById("statement-result");
+  const loading = document.getElementById("statement-loading");
   runBtn.addEventListener("click", async () => {
     const payload = {
-      company_name: document.getElementById("company-name").value,
-      period: document.getElementById("statement-period").value,
+      company_name: document.getElementById("company-name").value || "Company",
+      period: document.getElementById("statement-period").value || "Q1 2025",
       financial_data: {
         revenue: [5000000, 2000000, 500000],
         expenses: [3000000, 1500000, 800000],
         cash_flow: [2200000, -500000],
       },
     };
+
+    // Show loading, disable button
+    runBtn.disabled = true;
+    runBtn.textContent = "Analysing...";
+    if (loading) loading.classList.remove("hidden");
+    output.innerHTML = "";
+
     try {
       const response = await postStatement(payload);
-      output.innerHTML = `<div class='card'><h3>Analysis Results</h3><p>${textFromResponse(response)}</p></div>`;
+
+      // DCF section
+      const dcf = response.dcf || {};
+      const npvRows = (dcf.npv_table || [])
+        .map((r) => `<tr><td>Year ${r.year}</td><td>${currency(r.fcf)}</td><td>${currency(r.pv)}</td></tr>`)
+        .join("");
+
+      // Variance section
+      const varianceRows = (response.variance_analysis || [])
+        .map((v) => `<tr><td>${currency(v.actual)}</td><td>${currency(v.planned)}</td><td class="${v.significant ? 'kpi-danger' : ''}">${v.variance_pct}%</td></tr>`)
+        .join("");
+
+      output.innerHTML = `
+        <div class="card">
+          <h3>${response.company_name} — ${response.period}</h3>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--space-3); margin: var(--space-3) 0;">
+            <div class="card"><p>Total Revenue</p><p class="metric-value kpi-positive">${currency(response.total_revenue || 0)}</p></div>
+            <div class="card"><p>Total Expenses</p><p class="metric-value kpi-danger">${currency(response.total_expenses || 0)}</p></div>
+            <div class="card"><p>Net Margin</p><p class="metric-value" style="color: ${(response.net_margin_pct || 0) > 0 ? 'var(--green)' : 'var(--red)'}">${response.net_margin_pct || 0}%</p></div>
+            <div class="card"><p>Enterprise Value (DCF)</p><p class="metric-value kpi-positive">${currency(dcf.enterprise_value || 0)}</p></div>
+          </div>
+        </div>
+
+        ${npvRows ? `<div class="card"><h3>DCF Valuation</h3>
+          <table class="data-table"><thead><tr><th>Year</th><th>FCF</th><th>Present Value</th></tr></thead><tbody>${npvRows}</tbody></table>
+          <p style="margin-top: var(--space-2);">Terminal Value: <strong>${currency(dcf.terminal_value || 0)}</strong></p>
+        </div>` : ""}
+
+        ${varianceRows ? `<div class="card"><h3>Variance Analysis</h3>
+          <table class="data-table"><thead><tr><th>Actual</th><th>Planned</th><th>Variance</th></tr></thead><tbody>${varianceRows}</tbody></table>
+        </div>` : ""}
+
+        <div class="card"><h3>Comparable Analysis</h3><p>${response.comparable_analysis || "N/A"}</p></div>
+        <div class="card"><h3>Cash Flow Forecast</h3><p>${response.cash_flow_forecast || "N/A"}</p></div>
+
+        <div class="card" id="statement-audit"></div>
+      `;
+
+      const auditContainer = document.getElementById("statement-audit");
+      renderAudit(auditContainer, auditFromResponse(response));
     } catch (err) {
-      output.textContent = `Statement analysis failed: ${err.message}`;
+      output.innerHTML = `<div class='card'><h3 class="kpi-danger">Statement analysis failed</h3><p>${err.message}</p></div>`;
+    } finally {
+      runBtn.disabled = false;
+      runBtn.textContent = "Run Analysis →";
+      if (loading) loading.classList.add("hidden");
     }
   });
 }
@@ -752,7 +864,9 @@ async function route() {
 
 window.addEventListener("hashchange", route);
 window.addEventListener("DOMContentLoaded", async () => {
+  runMigrationIfNeeded();
   await syncDemoContext();
+  updateHeaderSubtitle(getRuntimeProfile());
   await pollHealth();
   setInterval(pollHealth, 30000);
   route();

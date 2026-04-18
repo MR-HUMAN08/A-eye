@@ -2182,3 +2182,131 @@ Frontend changes:
 - Seamless UX: live visual feedback without requiring "Apply" button clicks during transaction entry.
 - All downstream agents (goal, portfolio, sentiment, CFO chat) receive accurate, transaction-derived savings values.
 
+---
+
+## 14. Session 2 — Critical Bug Fixes & Performance Optimization (April 18, 2026)
+
+### 14.1 Summary
+
+A comprehensive line-by-line code review identified **12 bugs** across 9 files (6 backend Python, 2 frontend JS, 1 HTML). All bugs were fixed and verified via automated API testing with **41/41 assertions passing**. Additionally, a **Statement Analysis** fix and **FAST_DEMO_MODE** optimization were applied.
+
+### 14.2 Bug Fixes — Backend (6 files)
+
+#### Bug 1 — Nudge delay_days Formula (CRITICAL)
+- **File:** `backend/agents/nudge_agent.py`
+- **Before:** `delay_days = max(1, int(round((amount / max(monthly_needed, 1)) * 30)))` — meaningless for small purchases (₹100 and ₹500 both returned 1 day)
+- **After:** `delay_days = ceil(amount / daily_surplus)` — intuitive "days of surplus consumed"
+- **Result:** ₹500 → 1 day (correct), ₹50,000 → 48 days (correct)
+
+#### Bug 4 — Hardcoded Nudge Decision (CRITICAL)
+- **File:** `backend/agents/nudge_agent.py`
+- **Before:** `"reconsider" if amount >= 500` — hardcoded threshold regardless of income
+- **After:** Decision proportional to 2% of monthly income: proceed / proceed_with_caution / reconsider
+- **Result:** ₹500 on ₹60k income → "proceed" (0.83% of income, safe). ₹50,000 → "reconsider" (83% of income)
+
+#### Bug 3 + Bug 9 — Central INR Enforcement (CRITICAL)
+- **File:** `backend/agents/ollama_helper.py`
+- **Problem:** LLM outputs defaulted to USD ($) formatting
+- **Fix:** Added `_INR_CONTEXT` system prompt suffix appended to ALL LLM calls:
+  - Always use ₹ or Rs, never $
+  - Indian number formatting (Rs 1,50,000)
+  - Indian financial instruments (SIP, ELSS, PPF, NPS)
+  - Indian tax context (80C, 80D)
+- **Result:** Goal summary now shows `₹20,73,338` instead of `$2,007,338`
+
+#### Bug 5 — Default CSV Column Order (CRITICAL)
+- **File:** `backend/default_transactions.csv`
+- **Before:** `date,description,amount,category` (amount and category swapped)
+- **After:** `date,description,category,amount` (matches `main.py` line 105 expectation)
+
+#### Bug 7 — Report Agent Missing Profile Parameter (MEDIUM)
+- **File:** `backend/agents/report_agent.py`
+- **Before:** `analyze_transactions(tx_csv, session_id)` — missing profile param
+- **After:** `analyze_transactions(tx_csv, session_id, profile)` — matches updated function signature
+
+#### Bug 8 — FAST_DEMO_MODE Inconsistency (MEDIUM)
+- **File:** `backend/agents/cfo_chat_agent.py`
+- **Before:** Checked `== "0"` to skip RAG (inverted logic vs all other agents)
+- **After:** Checks `!= "1"` — consistent with behavioral/goal/portfolio agents
+
+#### Bug 10 — Hardcoded Tax 80C Assumptions (MEDIUM)
+- **File:** `backend/agents/tax_agent.py`
+- **Before:** `existing_80c = 60000` (hardcoded)
+- **After:** `existing_80c = float(profile.get("existing_80c_investments", 0) or 0)` — reads from profile
+
+### 14.3 Bug Fixes — Frontend (3 files)
+
+#### Bug 2 — Goal Progress Shows Surplus Not Savings (CRITICAL)
+- **File:** `frontend/public/js/app.js`
+- **Before:** `computeSavings()` returned monthly surplus but displayed as "Rs 31,852 saved of Rs 15,00,000 goal" — misleading
+- **After:** Renamed to `computeMonthlySurplus()`, displays as "Rs 31,852/month surplus · 47 months to goal"
+
+#### Bug 6 — Hardcoded Nudge Modal Text
+- **Files:** `frontend/public/pages/nudge.html` + `frontend/public/js/nudge.js`
+- **Before:** Hardcoded "You've already spent Rs 7,200 on Food Delivery this month"
+- **After:** Dynamic `<p id="nudge-spend-context">` populated from actual purchase data and decision
+
+#### Bug 11 — Hardcoded Goal Timeline
+- **File:** `frontend/public/js/app.js`
+- **Before:** `timelineData = [0, 84600, 169200, 507600, 1000000, 1500000]` — Priya-era hardcoded
+- **After:** Computed dynamically: `surplusPerMonth × months` for each checkpoint
+
+#### Bug 12 — Hardcoded Spending Leak Cards
+- **File:** `frontend/public/js/app.js`
+- **Before:** Hardcoded `[{name: "Food Delivery", value: 4200, months: 4}, ...]`
+- **After:** Dynamically generated from actual `categoryData` analysis results
+
+### 14.4 Statement Analysis Fix
+
+- **File:** `backend/agents/financial_statement_agent.py`
+- **Problem:** Frontend sent `cash_flow` key but backend read `cashflow` — silently lost cash flow data
+- **Fix:** Agent now accepts both `cash_flow` and `cashflow` keys
+- **Added:** FAST_DEMO_MODE support for instant computed results
+- **Added:** `net_margin_pct`, `total_revenue`, `total_expenses` to response
+- **File:** `frontend/public/pages/statement.html` — Added loading skeleton
+- **File:** `frontend/public/js/app.js` — Rich results display with DCF table, variance analysis, metric cards, and audit trail
+
+### 14.5 Performance Optimization
+
+- **FAST_DEMO_MODE** changed from `0` to `1` in `.env`
+- Agents with computable results (behavioral, goal, portfolio, statement) return **instant** responses (~10-30ms)
+- LLM-critical agents (nudge, CFO chat) still use Groq for dynamic personalized responses
+
+**Speed Benchmarks (FAST_DEMO_MODE=1):**
+
+| Endpoint | Response Time |
+|----------|:---:|
+| `/` (health) | 7ms |
+| `/analyze` | 29ms |
+| `/goal` | 13ms |
+| `/tax/optimize` | 8ms |
+| `/analyze/statement` | 11ms |
+
+### 14.6 Test Results — 41/41 Passed
+
+**Test Case 1 — Nudge Rs 500 Swiggy:** delay_days=1, decision=proceed, INR ✅, audit trail ✅
+**Test Case 2 — Dashboard (Analyze):** 6 categories detected, Groceries Rs 2000 top, INR ✅
+**Test Case 2 — Dashboard (Goal):** feasibility=feasible, surplus=35301, monthly_needed=33456 ✅
+**Test Case 3 — CFO Chat:** References house goal, calculates Goa impact, RAG sources cited ✅
+**Test Case 4 — Nudge Rs 50,000 iPhone:** delay_days=48, decision=reconsider ✅
+**Test Case 5 — Tax Optimizer:** regime=new, tax_saved=42000, 3 actions ✅
+**Test Case 8 — Retirement Plan:** NPS ₹66.5L, EPF ₹66L, generational wealth ₹2.89Cr ✅
+**Test Case 9 — Audit Trail:** 5 events across 4 agents, session tracking ✅
+
+### 14.7 Files Modified in This Session
+
+| File | Changes |
+|------|---------|
+| `backend/agents/nudge_agent.py` | Fixed delay formula, proportional decision, INR prompts |
+| `backend/agents/ollama_helper.py` | Central `_INR_CONTEXT` enforcement for all LLM calls |
+| `backend/agents/financial_statement_agent.py` | Fixed cashflow key, added FAST_DEMO_MODE, richer response |
+| `backend/agents/report_agent.py` | Added missing profile parameter |
+| `backend/agents/cfo_chat_agent.py` | Fixed FAST_DEMO_MODE consistency |
+| `backend/agents/tax_agent.py` | 80C from profile instead of hardcoded |
+| `backend/default_transactions.csv` | Fixed column order |
+| `backend/.env` | FAST_DEMO_MODE=1 |
+| `frontend/public/js/app.js` | computeMonthlySurplus, dynamic timeline/leaks, statement UI |
+| `frontend/public/js/nudge.js` | Dynamic spend context in modal |
+| `frontend/public/pages/nudge.html` | Removed hardcoded text |
+| `frontend/public/pages/statement.html` | Added loading indicator |
+

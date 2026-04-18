@@ -10,6 +10,23 @@ from dotenv import load_dotenv
 
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
+# Central INR / India context enforcement — appended to every system prompt
+_INR_CONTEXT = (
+    "\n\nIMPORTANT FORMATTING RULES:\n"
+    "- Always use Indian Rupees (₹ or Rs) for all currency values. NEVER use $ or USD.\n"
+    "- Use Indian number formatting (e.g., Rs 1,50,000 not $150,000).\n"
+    "- Reference Indian financial instruments (SIP, ELSS, PPF, NPS, SGB, Nifty 50).\n"
+    "- Use Indian tax context (Section 80C, 80D, old/new regime).\n"
+    "- Assume Indian inflation (~6%) and Indian equity returns (~12% CAGR).\n"
+)
+
+
+def _enrich_system_prompt(system_prompt: str) -> str:
+    """Append INR/India context to system prompt unless already present."""
+    if "₹" in system_prompt or "INR" in system_prompt or "Rs" in system_prompt:
+        return system_prompt
+    return system_prompt + _INR_CONTEXT
+
 
 def _build_prompt(system_prompt: str, user_prompt: str) -> str:
     return f"System:\n{system_prompt}\n\nUser:\n{user_prompt}\n\nAssistant:"
@@ -67,7 +84,9 @@ def run_ollama(system_prompt: str, user_prompt: str, max_tokens: int = 500) -> s
     """Primary LLM router: Groq first, Ollama fallback.
 
     Existing agents call this function name, so the signature is preserved.
+    All prompts are enriched with INR/India context automatically.
     """
+    enriched = _enrich_system_prompt(system_prompt)
     primary = os.getenv("PRIMARY_MODEL_PROVIDER", "groq").lower().strip()
     if primary not in {"groq", "ollama"}:
         primary = "groq"
@@ -76,9 +95,10 @@ def run_ollama(system_prompt: str, user_prompt: str, max_tokens: int = 500) -> s
     second = _run_ollama if primary == "groq" else _run_groq
 
     try:
-        return first(system_prompt, user_prompt, max_tokens)
+        return first(enriched, user_prompt, max_tokens)
     except Exception:
         try:
-            return second(system_prompt, user_prompt, max_tokens)
+            return second(enriched, user_prompt, max_tokens)
         except Exception as err:
-            return "" # Return empty string to allow caller to apply fallback logic
+            return ""  # Return empty string to allow caller to apply fallback logic
+

@@ -1,0 +1,1 @@
+"""FinPath MCP server package."""

@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "message": "How much should I save monthly?"
+  },
+  {
+    "role": "assistant",
+    "message": "- Set a specific financial goal (e.g., emergency fund, retirement)\n- Allocate 10-20% of expected income towards savings\n- Start with a manageable amount (e.g., Rs 1,000) and increase gradually\n- Consider the 50/30/20 rule: 50% for necessities, 30% for discretionary spending, 20% for saving and debt repayment\n- Review and adjust monthly savings amount as income and expenses change"
+  }
+]

@@ -1,0 +1,22 @@
+<div class="page-header"><h2>Audit Trail</h2></div>
+<div class="page-grid">
+  <section class="card span-12">
+    <h3>Session Overview</h3>
+    <p>Session ID: <span id="audit-session-id"></span></p>
+    <p id="audit-overview"></p>
+    <div style="height: 220px;"><canvas id="audit-confidence-chart"></canvas></div>
+  </section>
+  <section class="card span-8">
+    <h3>Decision Timeline</h3>
+    <div id="audit-timeline"></div>
+  </section>
+  <section class="card span-4">
+    <h3>RAG Knowledge Base Stats</h3>
+    <p id="rag-stats-card"></p>
+    <form id="rag-query-form">
+      <input class="input" id="rag-query-input" placeholder="Query Knowledge Base" />
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+    <div id="rag-query-results"></div>
+  </section>
+</div>

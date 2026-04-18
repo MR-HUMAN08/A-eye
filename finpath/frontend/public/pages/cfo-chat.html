@@ -1,0 +1,23 @@
+<div class="page-header"><h2>CFO Chat</h2></div>
+<div class="page-grid">
+  <section class="card span-4">
+    <h3>User Profile</h3>
+    <p>Income: Rs 60,000</p>
+    <p>Goal: House in Hyderabad</p>
+    <p>Monthly surplus: Rs 14,100</p>
+    <p>Wealth score: 24</p>
+    <h4>Starter Questions</h4>
+    <button class="btn" data-starter="Can I afford a vacation in December?">Can I afford a vacation in December?</button>
+    <button class="btn" data-starter="Where is my biggest financial leak?">Where is my biggest financial leak?</button>
+    <button class="btn" data-starter="Should I invest in ELSS or PPF?">Should I invest in ELSS or PPF?</button>
+    <button class="btn" data-starter="Am I on track for my house goal?">Am I on track for my house goal?</button>
+    <button class="btn" data-starter="What's the best tax-saving option for me?">What's the best tax-saving option for me?</button>
+  </section>
+  <section class="card span-8" style="display:flex; flex-direction:column; height: calc(var(--space-16) * 9);">
+    <div id="chat-log" style="flex:1; overflow:auto; display:flex; flex-direction:column; gap: var(--space-3);"></div>
+    <div style="display:flex; gap: var(--space-2);">
+      <textarea id="chat-input" class="input" rows="3" placeholder="Ask your CFO..."></textarea>
+      <button id="chat-send" class="btn btn-primary">Send -></button>
+    </div>
+  </section>
+</div>

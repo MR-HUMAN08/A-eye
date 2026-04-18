@@ -1,0 +1,95 @@
+<div class="page-header">
+  <div>
+    <h2>Dashboard</h2>
+    <p class="metric-label" id="dashboard-user-line">Live user context active</p>
+  </div>
+</div>
+<div class="page-grid">
+  <section class="card span-12">
+    <h3>Live Demo Inputs (Judge Editable)</h3>
+    <form id="demo-context-form" class="page-grid" autocomplete="off">
+      <div class="span-3"><label>Name</label><input id="demo-name" class="input" autocomplete="off" /></div>
+      <div class="span-2"><label>Age</label><input id="demo-age" type="number" class="input" autocomplete="off" /></div>
+      <div class="span-3"><label>City</label><input id="demo-city" class="input" autocomplete="off" /></div>
+      <div class="span-2"><label>Monthly Income</label><input id="demo-income" type="number" class="input" autocomplete="off" /></div>
+      <div class="span-2"><label>Fixed Expenses</label><input id="demo-fixed" type="number" class="input" autocomplete="off" /></div>
+      <div class="span-3"><label>Goal</label><input id="demo-goal" class="input" autocomplete="off" /></div>
+      <div class="span-3"><label>Goal Amount</label><input id="demo-goal-amount" type="number" class="input" autocomplete="off" /></div>
+      <div class="span-2"><label>Goal Years</label><input id="demo-goal-years" type="number" class="input" autocomplete="off" /></div>
+      <div class="span-3">
+        <label>Risk Appetite</label>
+        <select id="demo-risk" class="input" autocomplete="off">
+          <option value="" selected>Select risk</option>
+          <option value="low">low</option>
+          <option value="moderate">moderate</option>
+          <option value="high">high</option>
+        </select>
+      </div>
+      <div class="span-12">
+        <label>Transactions (CSV lines: date,description,category,amount)</label>
+        <textarea id="demo-transactions" class="input" rows="6" autocomplete="off"></textarea>
+      </div>
+      <div class="span-12" style="display:flex; gap: var(--space-3); align-items:center;">
+        <button type="submit" class="btn btn-primary">Apply Live Inputs</button>
+        <span id="demo-context-status" class="metric-label"></span>
+      </div>
+    </form>
+  </section>
+
+  <section class="card span-3">
+    <h3>Wealth Score</h3>
+    <div class="metric-value" id="wealth-score">0</div>
+    <p class="metric-label" id="wealth-subtext"></p>
+  </section>
+  <section class="card span-3">
+    <h3>Monthly Surplus</h3>
+    <div class="metric-value kpi-positive" id="monthly-surplus">Rs 0</div>
+    <p class="metric-label" id="surplus-subtext"></p>
+  </section>
+  <section class="card span-3">
+    <h3>Goal Progress</h3>
+    <p id="goal-progress-text"></p>
+    <div class="progress"><span id="goal-progress-bar" style="width: 0%;"></span></div>
+    <p class="metric-label"><span id="goal-progress-percent">0%</span> | <span id="goal-countdown"></span></p>
+  </section>
+  <section class="card span-3">
+    <h3>Leakage Alert</h3>
+    <div class="metric-value kpi-warning" id="leakage-main"></div>
+    <p class="metric-label" id="leakage-sub"></p>
+  </section>
+
+  <section class="span-7 chart-wrap">
+    <h3 class="chart-title">Spending Breakdown</h3>
+    <div class="chart-canvas"><canvas id="dashboard-donut"></canvas></div>
+  </section>
+  <section class="card span-5">
+    <h3>Goal Timeline</h3>
+    <div id="goal-timeline" class="timeline"></div>
+  </section>
+
+  <section class="card span-12">
+    <h3>Agent Status</h3>
+    <div class="agent-pill-row">
+      <button class="badge green" data-agent-link="spending">Behavioral Agent Active</button>
+      <button class="badge green" data-agent-link="goal">Goal Agent Active</button>
+      <button class="badge green" data-agent-link="portfolio">Portfolio Agent Active</button>
+      <button class="badge amber" data-agent-link="nudge">Nudge Agent Ready</button>
+      <button class="badge blue" data-agent-link="cfo-chat">CFO Agent Online</button>
+    </div>
+  </section>
+
+  <section class="card span-12">
+    <h3>Latest AI Insight - Behavioral Agent</h3>
+    <p id="dashboard-insight"></p>
+    <div id="dashboard-audit"></div>
+  </section>
+
+  <section class="card span-6">
+    <h3>Portfolio Pulse</h3>
+    <p id="portfolio-note" class="metric-label"></p>
+  </section>
+  <section class="card span-6">
+    <h3>Market Sentiment</h3>
+    <p id="sentiment-note" class="metric-label"></p>
+  </section>
+</div>

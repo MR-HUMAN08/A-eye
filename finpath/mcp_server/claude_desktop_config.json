@@ -1,0 +1,14 @@
+{
+  "_comment": "Paste the 'finpath' entry into your Claude Desktop config.json under mcpServers to connect FinPath's financial intelligence as native Claude tools.",
+  "mcpServers": {
+    "finpath": {
+      "command": "/home/harini/cbit/venv/bin/python",
+      "args": [
+        "/home/harini/cbit/finpath/mcp_server/finpath_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "/home/harini/cbit/finpath/backend"
+      }
+    }
+  }
+}

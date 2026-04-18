@@ -1,0 +1,7 @@
+pandas
+requests
+datasets
+pyarrow
+tqdm
+chromadb
+sentence-transformers

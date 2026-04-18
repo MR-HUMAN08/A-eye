@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "message": "How much should I save monthly?"
+  },
+  {
+    "role": "assistant",
+    "message": "Based on your profile, you should aim to save around 40% of your net income towards your goal of buying a house in Hyderabad within the next 5 years. Here’s how we can break it down:\n\n1. **Monthly Income**: ₹1,00,000\n2. **Monthly Fixed Expenses**: ₹25,000\n\nFirst, let's calculate the amount available for savings after fixed expenses:\n\\[ \\text{Savings Available} = \\text{Monthly Income} - \\text{Monthly Fixed Expenses} = 1,00,000 - 25,000 = ₹75,000 \\]\n\nGiven that your goal is to buy a house worth ₹15,00,000 within 5 years, and considering an inflation rate of 6% per year, we need to adjust the target amount for future value:\n\\[ \\text{Future Value Factor} = (1 + \\text{Inflation Rate})^{\\text{Number of Years}} = (1 + 0.06)^5 \\approx 1.3382 \\]\n\\[ \\text{Adjusted Goal Amount} = \\text{Goal Amount} \\times \\text{Future Value Factor} = 1,50,00,000 \\times 1.3382 \\approx ₹2,00,73,000 \\]\n\nSince the goal is to save this amount in 60 months (5 years), we need to calculate the monthly savings required:\n\\[ \\text{Monthly Savings Required} = \\frac{\\text{Adjusted Goal Amount}}{\\text{Number of Months}} = \\frac{2,00,73,000}{60} \\approx ₹334,550 \\]\n\nGiven your available savings after fixed expenses (₹75,000), you need to supplement this with additional savings:\n\\[ \\text{Additional Savings Required Monthly} = 334,550 - 75,000 = ₹259,550 \\]\n\nConsidering a moderate risk appetite and the need for an emergency fund, we can allocate approximately 10% of your income towards an emergency fund:\n\\[ \\text{Emergency Fund Monthly Savings} = 10\\% \\times 1,00,000 = ₹"
+  }
+]

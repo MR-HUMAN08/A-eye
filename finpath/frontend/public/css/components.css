@@ -109,6 +109,28 @@ select:focus {
   box-shadow: var(--shadow-glow-blue);
 }
 
+/* ── INR Currency Input ─────────────────────────────────────── */
+.currency-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.currency-prefix {
+  position: absolute;
+  left: var(--space-3);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--accent-green);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.currency-input {
+  padding-left: calc(var(--space-3) + 1.4em) !important;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;

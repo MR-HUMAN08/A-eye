@@ -2,8 +2,11 @@
 <div class="page-grid">
   <section class="card span-8" style="margin: 0 auto; grid-column: 3 / span 8;">
     <h3>Purchase Decision Simulator</h3>
-    <label>Purchase Amount (Rs)</label>
-    <input class="input" id="nudge-amount" type="number" autocomplete="off" />
+    <label>Purchase Amount (₹ INR)</label>
+    <div class="currency-input-wrap">
+      <span class="currency-prefix">₹</span>
+      <input class="input currency-input" id="nudge-amount" type="number" min="0" step="1" placeholder="e.g. 500" autocomplete="off" />
+    </div>
     <label>What are you buying?</label>
     <input class="input" id="nudge-description" type="text" autocomplete="off" />
     <button class="btn btn-primary" id="nudge-submit" style="width:100%; margin-top: var(--space-3);">Analyse Impact -></button>
@@ -27,7 +30,7 @@
       <button class="btn" id="nudge-close">Close</button>
     </div>
     <h1 id="nudge-impact" class="center"></h1>
-    <p class="center">You've already spent Rs 7,200 on Food Delivery this month - 2.4x the Rs 3,000 healthy benchmark.</p>
+    <p class="center" id="nudge-spend-context">Calculating your spending context...</p>
     <p id="nudge-insight"></p>
     <div style="display:flex; gap: var(--space-3); margin-top: var(--space-3);">
       <button class="btn btn-success" style="flex:1;" id="nudge-reconsider">Reconsider ✅</button>

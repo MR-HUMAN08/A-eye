@@ -16,7 +16,7 @@ from agents.audit import build_audit
 
 
 def generate_monthly_report(profile: dict, tx_csv: str, session_id: str) -> dict:
-    behavior = analyze_transactions(tx_csv, session_id)
+    behavior = analyze_transactions(tx_csv, session_id, profile)
     goal = calculate_goal_plan(profile, behavior["monthly_variable_spend"], session_id)
     portfolio = recommend_portfolio(profile, goal, session_id)
     tax = optimize_tax(profile, session_id)

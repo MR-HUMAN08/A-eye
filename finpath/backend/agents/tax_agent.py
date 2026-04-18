@@ -6,7 +6,7 @@ from rag.rag_engine import engine
 
 def optimize_tax(profile: dict, session_id: str) -> dict:
     annual_income = float(profile.get("monthly_income", 60000)) * 12
-    existing_80c = 60000
+    existing_80c = float(profile.get("existing_80c_investments", 0) or 0)
     headroom_80c = max(0, 150000 - existing_80c)
     health_80d = 0
     headroom_80d = max(0, 25000 - health_80d)

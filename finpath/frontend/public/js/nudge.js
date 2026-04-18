@@ -61,10 +61,21 @@ export function initNudgePage() {
   triggerBtn.addEventListener("click", async () => {
     const amount = Number(amountInput.value || 0);
     const description = descInput.value || "Purchase";
-    const sessionId = localStorage.getItem("finpath-session-id") || `mcp-session-${Date.now()}`;
+    const sessionId = window.APP_SESSION_ID || localStorage.getItem("finpath-session-id") || localStorage.getItem("finpath_session_id") || "demo-session-001";
+
+    if (!amount || amount <= 0) {
+      alert("Please enter a valid amount");
+      return;
+    }
+
+    if (!String(description).trim()) {
+      alert("Please enter what you are buying");
+      return;
+    }
 
     overlay.classList.remove("hidden");
     loading.classList.remove("hidden");
+    loading.textContent = "Consulting Financial Agents...";
     panel.classList.add("hidden");
 
     try {
@@ -75,10 +86,17 @@ export function initNudgePage() {
       loading.classList.add("hidden");
       panel.classList.remove("hidden");
       impact.textContent = `⚠️ Goal Delayed by ${delayDays} Day${delayDays > 1 ? "s" : ""}`;
+
+      // Dynamic spending context
+      const spendCtx = document.getElementById("nudge-spend-context");
+      const decisionText = response.decision === "reconsider" ? "We strongly recommend reconsidering." :
+                           response.decision === "proceed_with_caution" ? "Proceed with caution." : "This is within safe limits.";
+      if (spendCtx) spendCtx.textContent = `This Rs ${Number(amount).toLocaleString()} purchase on ${description} consumes ${delayDays} day(s) of savings capacity. ${decisionText}`;
+
       await typewrite(insight, summary, 15);
 
       const auditContainer = document.getElementById("nudge-audit");
-      renderAudit(auditContainer, response);
+      renderAudit(auditContainer, response?.audit || response);
 
       const updateHistory = (decision) => {
         const current = loadHistory();
@@ -107,7 +125,10 @@ export function initNudgePage() {
         hideModal();
       };
     } catch (error) {
-      loading.textContent = `Unable to compute nudge right now: ${error.message}`;
+      loading.classList.add("hidden");
+      console.error("Nudge failed:", error);
+      alert(`Could not compute nudge right now: ${error.message}`);
+      hideModal();
     }
   });
 

@@ -11,10 +11,10 @@
       <div class="span-3"><label>Name</label><input id="demo-name" class="input" autocomplete="off" /></div>
       <div class="span-2"><label>Age</label><input id="demo-age" type="number" class="input" autocomplete="off" /></div>
       <div class="span-3"><label>City</label><input id="demo-city" class="input" autocomplete="off" /></div>
-      <div class="span-2"><label>Monthly Income</label><input id="demo-income" type="number" class="input" autocomplete="off" /></div>
-      <div class="span-2"><label>Fixed Expenses</label><input id="demo-fixed" type="number" class="input" autocomplete="off" /></div>
+      <div class="span-2"><label>Monthly Income (₹)</label><div class="currency-input-wrap"><span class="currency-prefix">₹</span><input id="demo-income" type="number" min="0" step="1" placeholder="e.g. 60000" class="input currency-input" autocomplete="off" /></div></div>
+      <div class="span-2"><label>Fixed Expenses (₹)</label><div class="currency-input-wrap"><span class="currency-prefix">₹</span><input id="demo-fixed" type="number" min="0" step="1" placeholder="e.g. 18000" class="input currency-input" autocomplete="off" /></div></div>
       <div class="span-3"><label>Goal</label><input id="demo-goal" class="input" autocomplete="off" /></div>
-      <div class="span-3"><label>Goal Amount</label><input id="demo-goal-amount" type="number" class="input" autocomplete="off" /></div>
+      <div class="span-3"><label>Goal Amount (₹)</label><div class="currency-input-wrap"><span class="currency-prefix">₹</span><input id="demo-goal-amount" type="number" min="0" step="1" placeholder="e.g. 1500000" class="input currency-input" autocomplete="off" /></div></div>
       <div class="span-2"><label>Goal Years</label><input id="demo-goal-years" type="number" class="input" autocomplete="off" /></div>
       <div class="span-3">
         <label>Risk Appetite</label>
@@ -28,6 +28,7 @@
       <div class="span-12">
         <label>Transactions (CSV lines: date,description,category,amount)</label>
         <textarea id="demo-transactions" class="input" rows="6" autocomplete="off"></textarea>
+        <p class="metric-label">Note: The 10-row sample gives different surplus/leakage than the full 60-row Priya dataset by design.</p>
       </div>
       <div class="span-12" style="display:flex; gap: var(--space-3); align-items:center;">
         <button type="submit" class="btn btn-primary">Apply Live Inputs</button>
@@ -79,8 +80,8 @@
   </section>
 
   <section class="card span-12">
-    <h3>Latest AI Insight - Behavioral Agent</h3>
-    <p id="dashboard-insight"></p>
+    <h3>AI Insight — Key Takeaways</h3>
+    <div id="dashboard-insight"></div>
     <div id="dashboard-audit"></div>
   </section>
 

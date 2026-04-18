@@ -31,29 +31,59 @@ def _save_history(session_id: str, history: list[dict]) -> None:
 
 
 def _as_bullets(text: str, max_points: int = 5) -> str:
+    """Convert AI output into exactly `max_points` concise bullet points."""
     cleaned = (text or "").strip()
-    if not cleaned:
-        return "- Track your monthly surplus first.\n- Keep fixed expenses controlled.\n- Prioritize goal-linked savings each month."
 
-    lines = [line.strip() for line in cleaned.splitlines() if line.strip()]
-    existing_bullets = [
-        line.lstrip("-*").strip()
-        for line in lines
-        if line.startswith("-") or line.startswith("*") or line.startswith("•")
+    fallback_points = [
+        "Track your monthly surplus before making big purchases.",
+        "Keep fixed expenses below 30% of income.",
+        "Prioritize goal-linked savings each month via SIP.",
+        "Cut top discretionary leakage category by 10-15%.",
+        "Review and cancel unused subscriptions regularly.",
     ]
-    if existing_bullets:
-        return "\n".join([f"- {point}" for point in existing_bullets[:max_points]])
 
-    sentence_candidates = [s.strip() for s in cleaned.replace("\n", " ").split(".") if s.strip()]
-    selected = sentence_candidates[:max(3, min(max_points, len(sentence_candidates)))]
-    return "\n".join([f"- {point}." for point in selected])
+    if not cleaned:
+        return "\n".join([f"• {p}" for p in fallback_points[:max_points]])
+
+    # Extract bullet-like lines first
+    lines = [line.strip() for line in cleaned.splitlines() if line.strip()]
+    points = []
+    for line in lines:
+        stripped = line.lstrip("-*•0123456789.) ").strip()
+        if stripped and len(stripped) > 5:
+            points.append(stripped.rstrip(".") + ".")
+
+    # If no bullet-like lines, split on sentences
+    if not points:
+        sentence_candidates = [s.strip() for s in cleaned.replace("\n", " ").split(".") if s.strip() and len(s.strip()) > 5]
+        points = [s.rstrip(".") + "." for s in sentence_candidates]
+
+    # Deduplicate while preserving order
+    seen = set()
+    unique = []
+    for p in points:
+        key = p.lower().strip()
+        if key not in seen:
+            seen.add(key)
+            unique.append(p)
+    points = unique
+
+    # Pad to exactly max_points if needed
+    while len(points) < max_points:
+        for fp in fallback_points:
+            if fp not in points and len(points) < max_points:
+                points.append(fp)
+
+    # Trim to exactly max_points
+    points = points[:max_points]
+    return "\n".join([f"• {p}" for p in points])
 
 
 def chat(message: str, session_id: str, profile: dict) -> dict:
     history = _load_history(session_id)
     hits: list[dict] = []
     try:
-        if os.getenv("FAST_DEMO_MODE", "0").strip() == "0":
+        if os.getenv("FAST_DEMO_MODE", "1").strip() != "1":
             hits = engine.query(message, k=6)
     except Exception:
         hits = []
@@ -68,8 +98,10 @@ def chat(message: str, session_id: str, profile: dict) -> dict:
     goal_years = float(profile.get("goal_timeline_years", 0) or 0)
 
     system = (
-        "You are FinPath CFO. Provide practical, math-backed guidance in 3-5 concise bullet points. "
-        "Use the user's numbers directly and quantify timeline impact when possible."
+        "You are FinPath CFO — a concise personal finance advisor. "
+        "Reply with EXACTLY 5 short bullet points (one line each). "
+        "Use the user's actual numbers (in Rs/INR). Quantify impact where possible. "
+        "No introductions, no conclusions — just 5 actionable bullet points."
     )
     prompt = (
         f"User: {profile.get('name', 'User')}\n"
@@ -82,7 +114,7 @@ def chat(message: str, session_id: str, profile: dict) -> dict:
         f"Goal timeline years: {goal_years:.1f}\n"
         f"Question: {message}\n"
         f"RAG context (optional):\n{rag_context or 'No retrieved context available.'}\n"
-        "Format: short bullet points only."
+        "Respond with exactly 5 bullet points. Keep each point under 20 words."
     )
     out = run_ollama(system, prompt, max_tokens=180)
     guard = check(out)

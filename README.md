@@ -1,4 +1,4 @@
-# FinPath — AI-Powered Behavioral Wealth Architect
+## FinPath — AI-Powered Behavioral Wealth Architect
 
 > An autonomous **Personal CFO** powered by multi-agent AI that bridges the gap between daily spending and generational wealth.
 

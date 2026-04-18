@@ -1,0 +1,3350 @@
+[
+  {
+    "timestamp": "2026-04-17T14:05:42.508072+00:00",
+    "session_id": "558e8876-373a-49d8-805c-85a16271ace4",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Shopping": 7720,
+        "Groceries": 7080,
+        "Utilities": 5690,
+        "Dining Out": 4920
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:05:59.493769+00:00",
+    "session_id": "9b979e16-bbbd-451f-b91a-fbff261636e6",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:06:16.989840+00:00",
+    "session_id": "717ab0fc-1d2c-4088-97e5-b0146198f6b7",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:06:35.753180+00:00",
+    "session_id": "717ab0fc-1d2c-4088-97e5-b0146198f6b7",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:06:53.004148+00:00",
+    "session_id": "09ff2a30-f5ca-4173-b1f2-efeec1476fec",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:06:58.565573+00:00",
+    "session_id": "09ff2a30-f5ca-4173-b1f2-efeec1476fec",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 500.0,
+      "description": "Swiggy dinner order",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:07:19.591748+00:00",
+    "session_id": "test-001",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "Can I afford a vacation in December?"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:08:51.683995+00:00",
+    "session_id": "5f2c958e-bce9-4983-8ac0-79a4f453a393",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Shopping": 7720,
+        "Groceries": 7080,
+        "Utilities": 5690,
+        "Dining Out": 4920
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:09:23.669748+00:00",
+    "session_id": "c33bac6a-d874-4a7f-9777-4fb627e06576",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Shopping": 7720,
+        "Groceries": 7080,
+        "Utilities": 5690,
+        "Dining Out": 4920
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:09:41.132868+00:00",
+    "session_id": "c754a903-28b8-4b13-9832-a8ccf95ee5fd",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:09:56.902724+00:00",
+    "session_id": "2ba0f931-dadf-4eb6-a318-b8402bb74c77",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:10:15.413948+00:00",
+    "session_id": "2ba0f931-dadf-4eb6-a318-b8402bb74c77",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:10:35.378800+00:00",
+    "session_id": "1bd92f52-d9dc-48d7-aa86-e9ad23dd8f2e",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Shopping": 7720,
+        "Groceries": 7080,
+        "Utilities": 5690,
+        "Dining Out": 4920
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:10:51.116968+00:00",
+    "session_id": "60f455c7-486c-4577-abf3-c8eca9eb4045",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:10:56.024504+00:00",
+    "session_id": "60f455c7-486c-4577-abf3-c8eca9eb4045",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 500.0,
+      "description": "Swiggy dinner order",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:11:18.018345+00:00",
+    "session_id": "test-001",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "Can I afford a vacation in December?"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:11:35.374471+00:00",
+    "session_id": "61091e5d-18b8-40b4-a96b-99c769c9b8d9",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:27:34.800859+00:00",
+    "session_id": "0e6cc94c-4d1c-4bf8-b74b-0e5777613433",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:27:53.398785+00:00",
+    "session_id": "0e6cc94c-4d1c-4bf8-b74b-0e5777613433",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:28:10.605464+00:00",
+    "session_id": "f56ab581-9ee5-4e08-aa89-83ffbe71e3d6",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:28:16.965798+00:00",
+    "session_id": "f56ab581-9ee5-4e08-aa89-83ffbe71e3d6",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 500.0,
+      "description": "Swiggy dinner order",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:28:33.960198+00:00",
+    "session_id": "bd965bbc-e5d2-48ed-88be-e02037504c2c",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:31:49.718630+00:00",
+    "session_id": "c8cadaf1-dab9-49bb-8591-89e3705fa841",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:35:50.946369+00:00",
+    "session_id": "test-1776436529",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "How should I save for my house goal?"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:36:39.632873+00:00",
+    "session_id": "test-1776436599",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "manual save",
+    "data": {}
+  },
+  {
+    "timestamp": "2026-04-17T14:43:30.481099+00:00",
+    "session_id": "c29da7be-0333-4f4f-b4c5-a825e4a3bf15",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Shopping": 7720,
+        "Groceries": 7080,
+        "Utilities": 5690,
+        "Dining Out": 4920
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:43:44.507359+00:00",
+    "session_id": "c29da7be-0333-4f4f-b4c5-a825e4a3bf15",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T14:44:03.027679+00:00",
+    "session_id": "c29da7be-0333-4f4f-b4c5-a825e4a3bf15",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T18:56:24.465956+00:00",
+    "session_id": "1d4e1930-7a26-4435-a63f-1494105e3264",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T18:56:29.297968+00:00",
+    "session_id": "1d4e1930-7a26-4435-a63f-1494105e3264",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 500.0,
+      "description": "Swiggy dinner order",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-17T18:58:25.906195+00:00",
+    "session_id": "ab51398a-9e6f-4ade-8d11-c08245fc2fbc",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T18:58:30.236495+00:00",
+    "session_id": "ab51398a-9e6f-4ade-8d11-c08245fc2fbc",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 500.0,
+      "description": "Swiggy dinner order",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-17T18:59:25.415777+00:00",
+    "session_id": "c0b0a9f1-114e-4f73-8329-6975d413f488",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T18:59:28.939050+00:00",
+    "session_id": "c0b0a9f1-114e-4f73-8329-6975d413f488",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 500.0,
+      "description": "Swiggy dinner order",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-17T19:01:48.398605+00:00",
+    "session_id": "52789722-14cf-4ea2-b5cb-e405753d11c9",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T19:01:52.448241+00:00",
+    "session_id": "52789722-14cf-4ea2-b5cb-e405753d11c9",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 500.0,
+      "description": "Swiggy dinner order",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-17T19:24:18.984922+00:00",
+    "session_id": "09a3ddf9-a800-4d3d-b8de-a51505a62eca",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Shopping": 7720,
+        "Groceries": 7080,
+        "Utilities": 5690,
+        "Dining Out": 4920
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T20:13:14.713336+00:00",
+    "session_id": "87cfff3e-9f40-4186-809c-35e8a848612d",
+    "agent": "rag_engine",
+    "event_type": "query",
+    "summary": "Query: mutual fund investment India",
+    "data": {
+      "top_k": 3,
+      "results_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-04-17T20:48:31.222209+00:00",
+    "session_id": "da4f8da2-61d2-453a-806e-7f5f5b3244c8",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T20:48:31.845377+00:00",
+    "session_id": "da4f8da2-61d2-453a-806e-7f5f5b3244c8",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 500.0,
+      "description": "Swiggy dinner order",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-17T20:48:33.656390+00:00",
+    "session_id": "mcp-session-demo",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "Can I afford a vacation in December?"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T20:48:44.514119+00:00",
+    "session_id": "mcp-session-demo-2",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "Can I afford a vacation in December?"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T20:50:01.912605+00:00",
+    "session_id": "7311f429-10f1-4def-9174-5614f8263bc0",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T20:50:02.223230+00:00",
+    "session_id": "7c64be08-31ab-4f70-95eb-7b9764cf860c",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Shopping": 7720,
+        "Groceries": 7080,
+        "Utilities": 5690,
+        "Dining Out": 4920
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T20:50:02.231798+00:00",
+    "session_id": "9dc11f5d-3e02-4902-b125-4e26ca49b932",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T20:50:03.468202+00:00",
+    "session_id": "7311f429-10f1-4def-9174-5614f8263bc0",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:38:47.536003+00:00",
+    "session_id": "658439be-b9f2-4f92-bdf5-999760cfc5ae",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Shopping": 7720,
+        "Groceries": 7080,
+        "Utilities": 5690,
+        "Dining Out": 4920
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:38:47.908943+00:00",
+    "session_id": "0f75539e-a0d3-49c9-8cce-0dc45f0590c5",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:38:48.759329+00:00",
+    "session_id": "341ae5c6-6991-4f67-a9a9-ee9155f5c040",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:38:49.658827+00:00",
+    "session_id": "0f75539e-a0d3-49c9-8cce-0dc45f0590c5",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:39:40.754001+00:00",
+    "session_id": "0c49bb91-1953-442c-a65a-7bbea5460155",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Shopping": 7720,
+        "Groceries": 7080,
+        "Utilities": 5690,
+        "Dining Out": 4920
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:39:56.111052+00:00",
+    "session_id": "09bc98a3-3646-497b-9114-43bfdcaa2035",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:40:24.434817+00:00",
+    "session_id": "c68eb107-b509-4c98-b4d2-aab082f399d8",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:40:24.550998+00:00",
+    "session_id": "7f645b4f-4f14-4cb8-9798-544e7bc1bcca",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:40:27.438922+00:00",
+    "session_id": "c68eb107-b509-4c98-b4d2-aab082f399d8",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:41:01.353307+00:00",
+    "session_id": "6630c661-423f-47db-a7c0-230bd51b5356",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:41:02.278802+00:00",
+    "session_id": "6630c661-423f-47db-a7c0-230bd51b5356",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 500.0,
+      "description": "Swiggy dinner order",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:43:03.052640+00:00",
+    "session_id": "f1457edb-8828-4f4c-b36d-4c64d40d2486",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Shopping": 7720,
+        "Groceries": 7080,
+        "Utilities": 5690,
+        "Dining Out": 4920
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:43:03.275169+00:00",
+    "session_id": "2c43834f-b4d0-4b85-bb0f-40fa0cd79c90",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:43:03.478971+00:00",
+    "session_id": "aa7f2f26-fdc1-434f-9300-df43a8d2292f",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:43:05.391740+00:00",
+    "session_id": "aa7f2f26-fdc1-434f-9300-df43a8d2292f",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:50:04.772197+00:00",
+    "session_id": "judge-demo-1",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:50:06.570923+00:00",
+    "session_id": "judge-demo-1",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:50:07.109139+00:00",
+    "session_id": "judge-demo-1",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 12000.0,
+      "description": "Weekend trip",
+      "delay_days": 4
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:52:55.574777+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:52:56.178623+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 3020,
+        "Shopping": 1899,
+        "Food Delivery": 1050,
+        "Utilities": 799
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:52:56.278660+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:52:58.291043+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:53:50.452523+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 3020,
+        "Shopping": 1899,
+        "Food Delivery": 1050,
+        "Utilities": 799
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:53:50.895892+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:53:50.991742+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T21:53:53.069228+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:02:37.614950+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:02:37.901103+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:02:38.010218+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:02:39.747774+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:06:10.074574+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:06:10.275440+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:06:10.875763+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:06:12.626558+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:09:48.750199+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:09:49.111859+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:09:49.324040+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:09:51.067201+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:10:30.947022+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:10:48.585797+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:11:08.111436+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Food": 40,
+        "Travel": 30
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:11:26.440671+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "low"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:12:06.350361+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Food": 40,
+        "Travel": 30
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:12:24.856203+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:12:43.026895+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:13:02.600058+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Food": 40,
+        "Travel": 30
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:13:21.025772+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:14:01.659213+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:14:03.147171+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "low"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:14:20.991193+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Food": 40,
+        "Travel": 30
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:14:53.429026+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:15:53.553623+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "low"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:16:18.361658+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Food": 40,
+        "Travel": 30
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:21:07.233515+00:00",
+    "session_id": "test-speed",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:21:24.539419+00:00",
+    "session_id": "test-speed",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:21:56.858617+00:00",
+    "session_id": "test-speed",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:22:17.863855+00:00",
+    "session_id": "test-speed",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:22:51.915022+00:00",
+    "session_id": "test-speed",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:23:20.801564+00:00",
+    "session_id": "test-speed",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:23:48.433088+00:00",
+    "session_id": "test-speed",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:24:06.726486+00:00",
+    "session_id": "test-speed",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:24:25.292437+00:00",
+    "session_id": "test-speed",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:01.000833+00:00",
+    "session_id": "test-speed",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:01.005228+00:00",
+    "session_id": "test-speed",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:01.006754+00:00",
+    "session_id": "test-speed",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:01.018845+00:00",
+    "session_id": "test-speed",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:14.821967+00:00",
+    "session_id": "test-speed",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:14.848986+00:00",
+    "session_id": "test-speed",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:14.873428+00:00",
+    "session_id": "test-speed",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:14.879477+00:00",
+    "session_id": "test-speed",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:42.964788+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:42.966440+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:44.970700+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:48.778306+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:48.785722+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:51.271909+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:25:51.280982+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:27:15.500172+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Food": 40,
+        "Travel": 30
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:27:15.762390+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:27:18.538386+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:27:18.544132+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:27:39.199901+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:30:26.837504+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Food": 40,
+        "Travel": 30
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:30:26.838792+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:30:29.627317+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:30:29.632072+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:30:37.047784+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Food": 40,
+        "Travel": 30
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:30:37.053568+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:30:39.434701+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T22:30:39.444989+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:01:15.209721+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:01:15.210527+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:01:17.723886+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:01:17.733390+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:02:24.112119+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:02:30.196370+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 500.0,
+      "description": "Swiggy dinner order",
+      "delay_days": 15000
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:04:31.925884+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:04:31.935625+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:04:35.816176+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:04:35.825828+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:06:34.036121+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:06:34.135276+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:06:36.618628+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:06:36.627675+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:08:40.457456+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:11:27.259120+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:11:27.260227+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:11:29.693080+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:11:29.701761+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:14:49.709418+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:14:49.726776+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:14:52.318640+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:14:52.325868+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:15:52.624113+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "Can I afford a vacation to Goa in December if I save ₹2,000 less this month?"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:46:07.158337+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:46:07.170794+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:46:23.690144+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:46:23.959239+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:47:29.885973+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Investment": 14500,
+        "Insurance": 2000,
+        "Utilities": 900,
+        "Shopping": 800
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:47:30.006150+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:47:32.900973+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:47:32.909465+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "high"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:47:45.712330+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:53:46.858484+00:00",
+    "session_id": "test-cfo",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "Am I on track for my goal?"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:54:22.296205+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Investment": 14500,
+        "Insurance": 2000,
+        "Utilities": 900,
+        "Shopping": 800
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:54:23.889481+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Investment": 14500,
+        "Insurance": 2000,
+        "Utilities": 900,
+        "Shopping": 800
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:54:23.895183+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-17T23:54:26.369934+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "at_risk"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:01:18.881827+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:01:19.138771+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:01:21.615610+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:01:21.621858+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:01:40.035734+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:01:40.043443+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:01:42.709379+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:01:42.716432+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:01:58.183234+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:01:58.473827+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:02:01.244408+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:02:01.252445+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:10:30.286639+00:00",
+    "session_id": "mcp-session-1776459000344",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:10:30.287738+00:00",
+    "session_id": "mcp-session-1776459000344",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:10:33.001549+00:00",
+    "session_id": "mcp-session-1776459000344",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:10:33.006793+00:00",
+    "session_id": "mcp-session-1776459000344",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:12:26.315557+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:12:26.316899+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:12:29.129696+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:12:31.819155+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:12:31.827883+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:13:48.125922+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:13:48.388253+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:13:50.885263+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:13:50.893053+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:17:50.032831+00:00",
+    "session_id": "qa-full-1776471469",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Housing": 20000,
+        "Groceries": 6000,
+        "Transport": 3000,
+        "Food Delivery": 2500
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:17:50.055142+00:00",
+    "session_id": "qa-full-1776471469",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:17:50.080708+00:00",
+    "session_id": "qa-full-1776471469",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:17:50.094376+00:00",
+    "session_id": "qa-full-1776471469",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:17:50.135674+00:00",
+    "session_id": "qa-full-1776471469",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:17:50.175396+00:00",
+    "session_id": "qa-full-1776471469",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:17:50.766069+00:00",
+    "session_id": "qa-full-1776471469",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 1499.0,
+      "description": "wireless earphones",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:12.907028+00:00",
+    "session_id": "qa-full-1776471469",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "How much should I save monthly?"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:20.041823+00:00",
+    "session_id": "qa-full-1776471500",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Housing": 20000,
+        "Groceries": 6000,
+        "Transport": 3000,
+        "Food Delivery": 2500
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:20.052227+00:00",
+    "session_id": "qa-full-1776471500",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:20.064551+00:00",
+    "session_id": "qa-full-1776471500",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:20.079523+00:00",
+    "session_id": "qa-full-1776471500",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:20.092921+00:00",
+    "session_id": "qa-full-1776471500",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:20.102547+00:00",
+    "session_id": "qa-full-1776471500",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:27.432958+00:00",
+    "session_id": "qa-full-1776471500",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 1499.0,
+      "description": "wireless earphones",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:47.970872+00:00",
+    "session_id": "qa-full-1776471527",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Housing": 20000,
+        "Groceries": 6000,
+        "Transport": 3000,
+        "Food Delivery": 2500
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:47.980294+00:00",
+    "session_id": "qa-full-1776471527",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:47.999490+00:00",
+    "session_id": "qa-full-1776471527",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:48.013639+00:00",
+    "session_id": "qa-full-1776471527",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:48.023977+00:00",
+    "session_id": "qa-full-1776471527",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:48.042097+00:00",
+    "session_id": "qa-full-1776471527",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:50.481446+00:00",
+    "session_id": "qa-full-1776471500",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "How much should I save monthly?"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:18:58.887914+00:00",
+    "session_id": "qa-full-1776471527",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 1499.0,
+      "description": "wireless earphones",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:19:24.013825+00:00",
+    "session_id": "qa-full-1776471527",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "How much should I save monthly?"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:19:32.968856+00:00",
+    "session_id": "qa-full-1776471572",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Housing": 20000,
+        "Groceries": 6000,
+        "Transport": 3000,
+        "Food Delivery": 2500
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:19:32.995575+00:00",
+    "session_id": "qa-full-1776471572",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:19:33.027072+00:00",
+    "session_id": "qa-full-1776471572",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:19:33.035399+00:00",
+    "session_id": "qa-full-1776471572",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:19:33.068299+00:00",
+    "session_id": "qa-full-1776471572",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:19:33.099489+00:00",
+    "session_id": "qa-full-1776471572",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:19:44.992237+00:00",
+    "session_id": "qa-full-1776471572",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 1499.0,
+      "description": "wireless earphones",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:20:09.101040+00:00",
+    "session_id": "qa-full-1776471527",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Housing": 20000,
+        "Groceries": 6000,
+        "Transport": 3000,
+        "Food Delivery": 2500
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:20:09.115749+00:00",
+    "session_id": "qa-full-1776471527",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:20:09.131641+00:00",
+    "session_id": "qa-full-1776471527",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:20:12.262552+00:00",
+    "session_id": "qa-full-1776471572",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "How much should I save monthly?"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:21:14.848365+00:00",
+    "session_id": "qa-session",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Housing": 20000,
+        "Groceries": 6000,
+        "Transport": 3000,
+        "Food Delivery": 2500
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:21:14.881964+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:21:14.906547+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:21:14.922419+00:00",
+    "session_id": "qa-session",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:21:14.948720+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:21:28.603500+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:21:34.436888+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:21:34.452028+00:00",
+    "session_id": "qa-session",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:21:36.579873+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:21:45.492434+00:00",
+    "session_id": "qa-session",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Housing": 20000,
+        "Groceries": 6000,
+        "Transport": 3000,
+        "Food Delivery": 2500
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:22:03.615976+00:00",
+    "session_id": "qa-session",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Housing": 20000,
+        "Groceries": 6000,
+        "Transport": 3000,
+        "Food Delivery": 2500
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:22:03.630844+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:22:03.638588+00:00",
+    "session_id": "qa-session",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:22:07.398228+00:00",
+    "session_id": "48a5caa9-0c23-4707-923c-7e572feeed7f",
+    "agent": "rag_engine",
+    "event_type": "query",
+    "summary": "Query: How to reduce monthly expenses?",
+    "data": {
+      "top_k": 3,
+      "results_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:22:22.209760+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:22:34.598988+00:00",
+    "session_id": "qa-session",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 1499.0,
+      "description": "wireless earphones",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:23:02.637555+00:00",
+    "session_id": "qa-session",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "How much should I save monthly?"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:24:32.294072+00:00",
+    "session_id": "1692e893-853b-468a-beab-897a8fd236de",
+    "agent": "rag_engine",
+    "event_type": "query",
+    "summary": "Query: How to reduce monthly expenses?",
+    "data": {
+      "top_k": 3,
+      "results_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:24:55.182255+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:24:55.217536+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:24:55.233913+00:00",
+    "session_id": "qa-session",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:25:02.404803+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:25:07.528906+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:25:07.544515+00:00",
+    "session_id": "qa-session",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:26:26.193163+00:00",
+    "session_id": "qa-session",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "How much should I save monthly?"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:28:19.744625+00:00",
+    "session_id": "qa-session-postfix",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "How much should I save monthly?"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:28:32.828370+00:00",
+    "session_id": "qa-session",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:28:33.362946+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:28:34.575573+00:00",
+    "session_id": "qa-session",
+    "agent": "manual_test",
+    "event_type": "decision",
+    "summary": "smoke test save",
+    "data": {
+      "ok": true
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:28:42.603746+00:00",
+    "session_id": "qa-session",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Housing": 20000,
+        "Groceries": 6000,
+        "Transport": 3000,
+        "Food Delivery": 2500
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:28:42.621070+00:00",
+    "session_id": "qa-session",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:32:11.833502+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Misc": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:34:00.549370+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:34:00.561123+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:34:03.296794+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:34:03.303186+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:34:18.945657+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:34:18.949310+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:34:20.690098+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:34:20.707957+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:34:23.234977+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:34:23.249615+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:35:17.661479+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:35:17.675945+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:35:20.396139+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:35:20.411802+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:43:25.728851+00:00",
+    "session_id": "priya-demo",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:43:43.787044+00:00",
+    "session_id": "priya-demo",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:44:01.722667+00:00",
+    "session_id": "priya-demo",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:44:06.685154+00:00",
+    "session_id": "priya-demo",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 500.0,
+      "description": "Swiggy dinner order",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:44:13.355890+00:00",
+    "session_id": "priya-demo",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "Can I afford a vacation to Goa in December if I save ₹2,000 less this month?"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:44:41.066503+00:00",
+    "session_id": "priya-demo",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:44:46.806325+00:00",
+    "session_id": "priya-demo",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "quick check"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:46:13.234304+00:00",
+    "session_id": "priya-demo",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "Can I afford a vacation to Goa in December if I save ₹2,000 less this month?"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:46:37.530450+00:00",
+    "session_id": "priya-demo",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:46:42.952446+00:00",
+    "session_id": "priya-demo",
+    "agent": "nudge_agent",
+    "event_type": "nudge_response",
+    "summary": "Generated purchase nudge",
+    "data": {
+      "amount": 500.0,
+      "description": "Swiggy dinner order",
+      "delay_days": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:47:11.049902+00:00",
+    "session_id": "priya-demo",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:47:18.319774+00:00",
+    "session_id": "priya-demo",
+    "agent": "cfo_chat_agent",
+    "event_type": "chat_message",
+    "summary": "Processed chat turn",
+    "data": {
+      "message": "connectivity check"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:54:32.134469+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:54:51.630700+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:55:09.861706+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:55:27.863306+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:55:43.315849+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:56:03.207078+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "behavioral_agent",
+    "event_type": "decision",
+    "summary": "Generated spending leakage analysis",
+    "data": {
+      "top_categories": {
+        "Groceries": 2000,
+        "Shopping": 1500,
+        "Food Delivery": 1400,
+        "Utilities": 900
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:56:20.998457+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:56:41.556522+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:57:02.129235+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:57:22.800227+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:57:43.898804+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "goal_agent",
+    "event_type": "goal_update",
+    "summary": "Updated goal feasibility",
+    "data": {
+      "feasibility": "feasible"
+    }
+  },
+  {
+    "timestamp": "2026-04-18T00:58:10.027428+00:00",
+    "session_id": "mcp-session-1776461925812",
+    "agent": "portfolio_agent",
+    "event_type": "decision",
+    "summary": "Updated portfolio recommendation",
+    "data": {
+      "risk": "moderate"
+    }
+  }
+]
